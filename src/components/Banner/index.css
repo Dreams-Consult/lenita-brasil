@@ -65,6 +65,7 @@
 @media screen and (max-width: 880px){
   .banner {
     background-image: url('../../assets/bannersite-mobile.png');
+    padding-top: 80px;
   }
 
   .banner-content {
