@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import logo from '../../assets/logo-1.png'
+import logo from '../../assets/logo-horizontal.png'
 import instagram from '../../assets/instagram-icon.svg'
 import whatsapp from '../../assets/whatsapp-icon.svg'
 import youtube from '../../assets/youtube-icon.svg'
-import { useMediaQuery } from 'react-responsive';
 
 import './index.css'
 
