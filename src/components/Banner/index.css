@@ -13,23 +13,39 @@
 
 .banner-content {
   font-size: 60px;
-  color: #F9E4CA;
-  max-width: 500px;
-  margin-left: 300px;
+  color: #8C5838;
+  max-width: 650px;
+  margin-left: 150px;
   margin-right: auto;
+  letter-spacing: 2px;
+  line-height: 1.2;
 }
 
 .divText {
   display: flex;
-  justify-content: end;
-  text-align: end;
+  justify-content: start;
+  text-align: start;
+}
+
+.divText p {
+  font-weight: 500;
+  word-spacing: 8px;
 }
 
 .divButton {
   display: flex;
   justify-content: end;
+  margin-top: 20px;
+}
+.banner button {
+  background: #8C5838;
+  color: #F9E4CA;
 }
 
+.banner button:hover {
+  background: #6d4429;
+  color: #F3BB90;
+}
 @media screen and (max-width: 1280px){
   .banner {
     background-position: 80%;

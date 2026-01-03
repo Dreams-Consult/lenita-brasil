@@ -11,13 +11,14 @@ function Banner() {
     <div id='banner' className="banner">
       <div className='banner-content'>
         <div className='divText'>
-          <p>Resultados que
-          você vê, cuidado
-          que você sente.</p>
+          <p>CLÍNICA MÉDICA
+          DERMATOLÓGICA E
+          EXAMES LABRATORIAIS
+          DE ALTO PADRÃO</p>
         </div>
 
         <div className='divButton'>
-          <Button text='Agende sua consulta' onClick={handleClick}/>
+          <Button text='Agende seu horário' onClick={handleClick}/>
         </div>
       </div>
     </div>
