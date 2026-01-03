@@ -108,7 +108,7 @@
   }
 
   .procedimentos-content {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   .procedimentos-content > h1 {
@@ -129,13 +129,20 @@
   .procedimentos-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 100%;
+  }
+
+  .procedimento-card {
+    width: 100%;
   }
 
   .procedimento-image {
     height: 220px;
+    width: 100%;
   }
 
   .procedimento-card > h3 {
     font-size: 18px;
+    text-align: center;
   }
 }

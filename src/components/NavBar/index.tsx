@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Input } from '../Input'
+import { useState, useEffect } from 'react'
 import logo from '../../assets/logo-1.png'
 import instagram from '../../assets/instagram-icon.svg'
 import whatsapp from '../../assets/whatsapp-icon.svg'
@@ -13,60 +12,59 @@ type NavBarProps = {
 }
 
 function NavBar({ isMobile }: NavBarProps) {
-  const [search, setSearch] = useState('')
-  const isShowSearchBar = useMediaQuery({ query: `(min-width: 800px)` });
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      if (currentScrollY < 50) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   return (
-    <div className="NavBar">
-      <div className='sectionBar'>
+    <div className={`NavBar ${isVisible ? 'visible' : 'hidden'}`}>
+      <div className='logo-section'>
         <a href='#banner'>
-          <img src={logo} alt='logo' width={250}/>
+          <img src={logo} alt='logo' width={200}/>
         </a>
       </div>
 
       {
         isMobile && (
-          <div className='sectionBar links'>
-            <div>
-              <a href='#sobre'>Quem é Lenita Brasil</a>
-            </div>
-
-            <div>
-              <a href='#clinica'>A Clínica</a>
-            </div>
-
-            <div>
-              <a href='#laboratorios'>Nossos Laboratórios</a>
-            </div>
-
-            <div>
-              <a href='#tratamentos'>Tratamentos</a>
-            </div>
-
-            <div>
-              <a href='#exames'>Exames</a>
-            </div>
-
-            <div>
-              <a href='#contato'>Contato</a>
-            </div>
-          </div>
+          <nav className='nav-links'>
+            <a href='#sobre'>Dra. Lenita Brasil</a>
+            <a href='#clinica'>Clínica</a>
+            <a href='#procedimentos'>Procedimentos</a>
+            <a href='#laboratorios'>Laboratórios</a>
+            <a href='#exames'>Exames</a>
+          </nav>
         )
       }
 
-      <div className='sectionBar align'>
-        <div className='social'>
-          <img src={instagram} alt='instagram' width={30} />
-          <img src={whatsapp} alt='whatsapp' width={30} />
-          <img src={youtube} alt='youtube' width={38} />
-        </div>
-        {
-          isShowSearchBar && (
-            <div className='search'>
-              <Input value={search} placeholder='Pesquisar' onChange={(e) => setSearch(e.target.value)}/>
-            </div>
-          )
-        }
+      <div className='social-section'>
+        <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
+          <img src={instagram} alt='instagram' width={28} />
+        </a>
+        <a href='https://wa.me' target='_blank' rel='noopener noreferrer'>
+          <img src={whatsapp} alt='whatsapp' width={28} />
+        </a>
+        <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
+          <img src={youtube} alt='youtube' width={32} />
+        </a>
       </div>
     </div>
   )

@@ -158,15 +158,27 @@
   }
 
   .clinica-content {
-    padding: 0 30px;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .clinica-text {
+    width: 100%;
+    align-items: center;
   }
 
   .clinica-text > h1 {
     font-size: 40px;
+    text-align: center;
   }
 
   .clinica-text > p {
     font-size: 16px;
+    text-align: center;
+  }
+
+  .clinica-text button {
+    align-self: center;
   }
 
   .clinica-image::before {

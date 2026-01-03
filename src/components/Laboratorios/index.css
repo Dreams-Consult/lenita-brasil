@@ -152,7 +152,7 @@
   }
 
   .laboratorios-content {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   .laboratorios-content > h1 {
@@ -165,8 +165,26 @@
     margin-bottom: 40px;
   }
 
+  .laboratorios-grid {
+    width: 100%;
+  }
+
+  .unidade-card {
+    width: 100%;
+  }
+
   .card-image {
     height: 250px;
+    width: 100%;
+  }
+
+  .card-info {
+    width: 100%;
+  }
+
+  .location-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .endereco {
