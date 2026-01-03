@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import logo from '../../assets/logo-horizontal.png'
 import instagram from '../../assets/instagram-icon.svg'
 import whatsapp from '../../assets/whatsapp-icon.svg'
-import youtube from '../../assets/youtube-icon.svg'
+import facebook from '../../assets/facebook-icon.svg'
 
 import './index.css'
 
@@ -55,14 +55,14 @@ function NavBar({ isMobile }: NavBarProps) {
       }
 
       <div className='social-section'>
-        <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
+        <a href='https://www.instagram.com/dra.lenitabrasil' target='_blank' rel='noopener noreferrer'>
           <img src={instagram} alt='instagram' width={28} />
         </a>
-        <a href='https://wa.me' target='_blank' rel='noopener noreferrer'>
+        <a href='https://wa.me/5591996040003' target='_blank' rel='noopener noreferrer'>
           <img src={whatsapp} alt='whatsapp' width={28} />
         </a>
-        <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
-          <img src={youtube} alt='youtube' width={32} />
+        <a href='https://www.facebook.com/people/Dra-Lenita-Brasil/61579320161159/' target='_blank' rel='noopener noreferrer'>
+          <img src={facebook} alt='facebook' width={28} />
         </a>
       </div>
     </div>

@@ -6,8 +6,12 @@ function Footer() {
     window.open('https://wa.me/5591996040003', '_blank')
   }
 
-  function handleInstagramClick(account: string) {
-    window.open(`https://instagram.com/${account}`, '_blank')
+  function handleInstagramDraClick() {
+    window.open('https://www.instagram.com/dra.lenitabrasil', '_blank')
+  }
+
+  function handleInstagramLabClick() {
+    window.open('https://www.instagram.com/laboratorio_lb/', '_blank')
   }
 
   function handleLocationClick(unidade: string) {
@@ -59,11 +63,11 @@ function Footer() {
         <div className='divider'></div>
 
         <div className='social-footer'>
-          <div className='social-item' onClick={() => handleInstagramClick('dra.lenitabrasil')}>
+          <div className='social-item' onClick={handleInstagramDraClick}>
             <span className='instagram-icon'>📷</span>
             <span>@dra.lenitabrasil</span>
           </div>
-          <div className='social-item' onClick={() => handleInstagramClick('laboratorio_lb')}>
+          <div className='social-item' onClick={handleInstagramLabClick}>
             <span className='instagram-icon'>📷</span>
             <span>@laboratorio_lb</span>
           </div>
