@@ -1,0 +1,180 @@
+.clinica {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  background: linear-gradient(to right, #F9E4CA 0%, #F9E4CA 50%, #8C5838 50%, #8C5838 100%);
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  position: relative;
+}
+
+.clinica-content {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.clinica-text {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.clinica-text > h1 {
+  font-size: 60px;
+  color: #8C5838;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.clinica-text > p {
+  font-size: 20px;
+  color: #8C5838;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.clinica-text button {
+  margin-top: auto;
+  align-self: flex-end;
+  background: transparent;
+  border: 2px solid #8C5838;
+  color: #8C5838;
+  font-size: 18px;
+  text-transform: lowercase;
+  padding: 12px 35px;
+  transition: all 0.3s ease;
+}
+
+.clinica-text button:hover {
+  background: #8C5838;
+  color: #F9E4CA;
+  transform: scale(1.02);
+}
+
+.clinica-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.clinica-image::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 380px;
+  background-color: #F9E4CA;
+  z-index: 0;
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clinica-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1300px){
+  .clinica-content {
+    padding: 0 50px;
+    gap: 50px;
+  }
+
+  .clinica-text > h1 {
+    font-size: 50px;
+  }
+
+  .clinica-text > p {
+    font-size: 18px;
+  }
+
+  .clinica-image::before {
+    width: 450px;
+    height: 350px;
+  }
+
+  .clinica-image img {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .clinica {
+    background: #F9E4CA;
+  }
+
+  .clinica-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 50px;
+  }
+
+  .clinica-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .clinica-text > h1 {
+    font-size: 50px;
+  }
+
+  .clinica-text > p {
+    font-size: 18px;
+    max-width: 700px;
+  }
+
+  .clinica-image::before {
+    width: 400px;
+    height: 320px;
+  }
+
+  .clinica-image img {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 715px){
+  .clinica {
+    padding: 60px 0;
+  }
+
+  .clinica-content {
+    padding: 0 30px;
+  }
+
+  .clinica-text > h1 {
+    font-size: 40px;
+  }
+
+  .clinica-text > p {
+    font-size: 16px;
+  }
+
+  .clinica-image::before {
+    width: 90%;
+    height: 280px;
+  }
+
+  .clinica-image img {
+    max-width: 90%;
+  }
+}

@@ -1,39 +1,73 @@
-import clinic from '../../assets/clinic-icon.svg'
-import tube from '../../assets/tube-icon.svg'
-
+import logo from '../../assets/logo-1.png'
 import './index.css'
 
 function Footer() {
+  function handleWhatsAppClick() {
+    window.open('https://wa.me/5591996040003', '_blank')
+  }
+
+  function handleInstagramClick(account: string) {
+    window.open(`https://instagram.com/${account}`, '_blank')
+  }
+
+  function handleLocationClick(unidade: string) {
+    alert(`Direcionando para ${unidade}`)
+  }
+
   return (
     <div className="footer">
-      <div className="div-footer">
-        <div className="div-title">
-          <img src={clinic} alt='clinic' width={50} />
-          <h1>Clínica Lenita Brasil</h1>
-        </div>
-        <p>
-          A Lenita Brasil é referência em rejuvenescimento e
-          cuidados integrados, unindo excelência técnica,
-          atendimento humanizado e estrutura premium.
-          Oferecendo agilidade, conforto e resultados seguros
-          para pacientes que valorizam qualidade, exclusividade
-          e conﬁança.
-        </p>
+      <div className="footer-column logo-column">
+        <img src={logo} alt='Lenita Brasil' className='footer-logo' />
+        <nav className='footer-nav'>
+          <a href='#banner'>Home</a>
+          <a href='#sobre'>Dra. Lenita Brasil</a>
+          <a href='#clinica'>Clínica</a>
+          <a href='#procedimentos'>Procedimentos</a>
+          <a href='#laboratorios'>Laboratórios</a>
+          <a href='#exames'>Exames</a>
+        </nav>
       </div>
 
-      <div className="div-footer">
-        <div className="div-title">
-          <img className='tube' src={tube} alt='tube' width={40}  />
-          <h1>Laboratórios Lenita Brasil</h1>
-        </div>
+      <div className="footer-column cta-column">
+        <h2>Viva a experiência de um atendimento exclusivo e cuidadoso</h2>
         <p>
-          A Lenita Brasil é referência em rejuvenescimento e
-          cuidados integrados, unindo excelência técnica,
-          atendimento humanizado e estrutura premium.
-          Oferecendo agilidade, conforto e resultados seguros
-          para pacientes que valorizam qualidade, exclusividade
-          e conﬁança.
+          Agende sua consulta ou exame em uma de nossas clínicas ou 
+          laboratórios e permita-se sentir o melhor da sua própria beleza 
+          e saúde.
         </p>
+        <button className='whatsapp-btn' onClick={handleWhatsAppClick}>
+          <span className='whatsapp-icon'>📞</span>
+          91 99604-0003
+        </button>
+      </div>
+
+      <div className="footer-column contact-column">
+        <div className='unidade-info'>
+          <button className='unidade-badge' onClick={() => handleLocationClick('Unidade Belém')}>
+            Unidade Belém
+          </button>
+          <p>R. Bernal do Couto, nº 75 - Umarizal</p>
+        </div>
+
+        <div className='unidade-info'>
+          <button className='unidade-badge' onClick={() => handleLocationClick('Unidade Castanhal')}>
+            Unidade Castanhal
+          </button>
+          <p>Av. Marechal Deodoro, nº 368 - Ianetama</p>
+        </div>
+
+        <div className='divider'></div>
+
+        <div className='social-footer'>
+          <div className='social-item' onClick={() => handleInstagramClick('dra.lenitabrasil')}>
+            <span className='instagram-icon'>📷</span>
+            <span>@dra.lenitabrasil</span>
+          </div>
+          <div className='social-item' onClick={() => handleInstagramClick('laboratorio_lb')}>
+            <span className='instagram-icon'>📷</span>
+            <span>@laboratorio_lb</span>
+          </div>
+        </div>
       </div>
     </div>
   )

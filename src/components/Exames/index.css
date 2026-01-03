@@ -1,0 +1,117 @@
+.exames {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  background-color: #424033;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.exames-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.exames-content > h1 {
+  font-size: 70px;
+  color: #F3BB90;
+  margin-bottom: 30px;
+}
+
+.exames-intro {
+  font-size: 20px;
+  color: #F9E4CA;
+  margin-bottom: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.exames-categories {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background: transparent;
+  border: 2px solid #F3BB90;
+  color: #F9E4CA;
+  font-size: 20px;
+  text-transform: none;
+  padding: 15px 45px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0;
+}
+
+.category-btn:hover {
+  background: #F3BB90;
+  color: #424033;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(243, 187, 144, 0.3);
+}
+
+@media screen and (max-width: 1300px){
+  .exames-content {
+    padding: 0 50px;
+  }
+
+  .exames-content > h1 {
+    font-size: 60px;
+  }
+
+  .exames-intro {
+    font-size: 18px;
+  }
+
+  .category-btn {
+    font-size: 18px;
+    padding: 12px 35px;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .exames-content > h1 {
+    font-size: 50px;
+  }
+
+  .exames-intro {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .exames-categories {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 715px){
+  .exames {
+    padding: 60px 0;
+  }
+
+  .exames-content {
+    padding: 0 30px;
+  }
+
+  .exames-content > h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .exames-intro {
+    font-size: 16px;
+  }
+
+  .category-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}

@@ -5,14 +5,15 @@ type InputProps = {
   value: string,
   placeholder?: string,
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
+  showSearchIcon?: boolean,
 }
 
-function Input({ value, placeholder, onChange}:InputProps) {
+function Input({ value, placeholder, onChange, showSearchIcon = true }:InputProps) {
   return (
-    <>
+    <div className='input-wrapper'>
       <input value={value} placeholder={placeholder} onChange={onChange} />
-      <img className='search-logo' src={searchLogo} width={25}/>
-    </>
+      {showSearchIcon && <img className='search-logo' src={searchLogo} width={25}/>}
+    </div>
   )
 }
 

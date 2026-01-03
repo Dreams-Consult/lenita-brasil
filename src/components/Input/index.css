@@ -1,3 +1,8 @@
+.input-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
 input {
   border: 2px solid;
   border-color: #F9E4CA;
@@ -14,11 +19,29 @@ input::placeholder {
   font-weight: normal;
 }
 
-/* input:focus {
-  border-bottom-color: #2C391C;
-} */
-
 .search-logo {
   margin-left: -35px;
   margin-bottom: -8px;
+}
+
+/* Styles for contact form inputs */
+.contato-form input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #F3BB90;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #424033;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.contato-form input::placeholder {
+  color: #999;
+  font-style: normal;
+}
+
+.contato-form input:focus {
+  outline: none;
+  border-color: #8C5838;
 }

@@ -40,7 +40,15 @@ function NavBar({ isMobile }: NavBarProps) {
             </div>
 
             <div>
+              <a href='#tratamentos'>Tratamentos</a>
+            </div>
+
+            <div>
               <a href='#exames'>Exames</a>
+            </div>
+
+            <div>
+              <a href='#contato'>Contato</a>
             </div>
           </div>
         )
