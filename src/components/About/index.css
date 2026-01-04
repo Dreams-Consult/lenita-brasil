@@ -13,13 +13,17 @@
   font-optical-sizing: auto;
   font-style: normal;
   gap: 10px;
+  max-width: 550px;
 }
 
 .sobre-text > h1 {
   font-style: normal;
   color: #8C5838;
-  font-size: 100px;
+  font-size: 60px;
   padding: 0px 20px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1300px){
@@ -30,13 +34,17 @@
   .sobre-text > h1 {
     font-style: normal;
     color: #8C5838;
-    font-size: 80px;
+    font-size: 55px;
   }
 }
 
 @media screen and (max-width: 715px){
   .sobre-text > h1 {
-    font-size: 60px;
+    font-size: 45px;
+  }
+
+  .sobre-text > p {
+    font-size: 15px;
   }
 
   .avatar {
@@ -45,9 +53,35 @@
 }
 
 .sobre-text > p {
-  font-size: 20px;
+  font-size: 17px;
   color: #424033;
   padding: 0px 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 20px;
+}
+
+.agende-btn {
+  background: #8C5838;
+  color: #F9E4CA;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.agende-btn:hover {
+  background: #6d4429;
+  color: #F3BB90;
+  transform: scale(1.02);
 }
 
 .sobre-image {

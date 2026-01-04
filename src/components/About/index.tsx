@@ -9,15 +9,13 @@ function About() {
       </div>
 
       <div className='sobre-text'>
-        <h1>Quem é Lenita Brasil?</h1>
+        <h1>Dra. Lenita Brasil</h1>
         <p>
-          A Lenita Brasil é referência em rejuvenescimento e
-          cuidados integrados, unindo excelência técnica,
-          atendimento humanizado e estrutura premium.
-          Oferecendo agilidade, conforto e resultados seguros
-          para pacientes que valorizam qualidade, exclusividade
-          e conﬁança.
+          Médica e referência na integração entre saúde e bem-estar, a Dra. Lenita Brasil está à frente da clínica e da rede de laboratórios especializados em tratamentos estéticos individualizados e exames laboratoriais. Seu compromisso é promover equilíbrio, autoestima e qualidade de vida, sempre com acolhimento e resultados naturais.
         </p>
+        <div className='button-container'>
+          <button className='agende-btn'>Agende sua consulta</button>
+        </div>
       </div>
     </div>
   )
