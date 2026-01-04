@@ -22,6 +22,9 @@ function Footer() {
     <div className="footer">
       <div className="footer-column logo-column">
         <img src={logo} alt='Lenita Brasil' className='footer-logo' />
+      </div>
+
+      <div className="footer-column">
         <nav className='footer-nav'>
           <a href='#banner'>Home</a>
           <a href='#sobre'>Dra. Lenita Brasil</a>

@@ -1,23 +1,26 @@
 .footer {
   display: flex;
-  gap: 80px;
+  gap: 60px;
   background: #F3BB90;
   padding: 80px 100px;
   color: #8C5838;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
+  text-align: left;
   gap: 20px;
 }
 
 .logo-column {
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  gap: 40px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  min-width: 200px;
 }
 
 .footer-logo {
@@ -28,8 +31,7 @@
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex: 1;
+  gap: 8px;
 }
 
 .footer-nav a {
@@ -37,6 +39,7 @@
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-nav a:hover {
@@ -44,21 +47,24 @@
 }
 
 .cta-column {
-  flex: 1.2;
+  flex: 0 0 auto;
+  min-width: 280px;
+  max-width: 320px;
 }
 
 .cta-column h2 {
-  font-size: 24px;
+  font-size: 22px;
   color: #8C5838;
-  margin: 0 0 15px 0;
-  line-height: 1.4;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .cta-column p {
-  font-size: 16px;
+  font-size: 15px;
   color: #424033;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .whatsapp-btn {
@@ -88,28 +94,30 @@
 }
 
 .contact-column {
-  flex: 1;
-  gap: 25px;
+  flex: 0 0 auto;
+  gap: 20px;
+  min-width: 280px;
 }
 
 .unidade-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .unidade-badge {
   background: transparent;
   border: 2px solid #8C5838;
   color: #8C5838;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: none;
-  padding: 8px 20px;
+  padding: 6px 18px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0;
   width: fit-content;
+  font-weight: 500;
 }
 
 .unidade-badge:hover {
@@ -118,30 +126,31 @@
 }
 
 .unidade-info p {
-  font-size: 14px;
+  font-size: 13px;
   color: #424033;
   margin: 0;
+  line-height: 1.4;
 }
 
 .social-footer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 5px;
 }
 
 .divider {
   width: 100%;
   height: 1px;
   background-color: #8C5838;
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .social-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 8px;
+  font-size: 13px;
   color: #424033;
   cursor: pointer;
   transition: color 0.3s ease;
