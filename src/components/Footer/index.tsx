@@ -1,4 +1,6 @@
 import logo from '../../assets/logo-1.png'
+import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import instagramIcon from '../../assets/instagram-icon.svg'
 import './index.css'
 
 function Footer() {
@@ -43,7 +45,7 @@ function Footer() {
           e saúde.
         </p>
         <button className='whatsapp-btn' onClick={handleWhatsAppClick}>
-          <span className='whatsapp-icon'>📞</span>
+          <img src={whatsappIcon} alt="WhatsApp" className='whatsapp-icon' />
           91 99604-0003
         </button>
       </div>
@@ -67,11 +69,11 @@ function Footer() {
 
         <div className='social-footer'>
           <div className='social-item' onClick={handleInstagramDraClick}>
-            <span className='instagram-icon'>📷</span>
+            <img src={instagramIcon} alt="Instagram" className='instagram-icon' />
             <span>@dra.lenitabrasil</span>
           </div>
           <div className='social-item' onClick={handleInstagramLabClick}>
-            <span className='instagram-icon'>📷</span>
+            <img src={instagramIcon} alt="Instagram" className='instagram-icon' />
             <span>@laboratorio_lb</span>
           </div>
         </div>

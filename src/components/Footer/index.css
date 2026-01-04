@@ -90,7 +90,13 @@
 }
 
 .whatsapp-icon {
-  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(39%) sepia(19%) saturate(1216%) hue-rotate(345deg) brightness(92%) contrast(88%);
+}
+
+.whatsapp-btn:hover .whatsapp-icon {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(24%) saturate(424%) hue-rotate(329deg) brightness(103%) contrast(95%);
 }
 
 .contact-column {
@@ -161,7 +167,13 @@
 }
 
 .instagram-icon {
-  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(1234%) hue-rotate(358deg) brightness(95%) contrast(90%);
+}
+
+.social-item:hover .instagram-icon {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(19%) saturate(1216%) hue-rotate(345deg) brightness(92%) contrast(88%);
 }
 
 @media screen and (max-width: 1100px){
