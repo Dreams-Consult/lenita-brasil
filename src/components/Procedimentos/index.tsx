@@ -1,4 +1,12 @@
 import './index.css'
+import BotoxImg from '../../assets/Botox.jpg'
+import PreenchimentoImg from '../../assets/PreenchimentoLabial.jpg'
+import MesojectGunImg from '../../assets/MesojectGun.jpg'
+import TerapiaCapilarImg from '../../assets/TerapiaCapilar.jpg'
+import ManchasImg from '../../assets/ManchasRosto.jpg'
+import FiosPDOImg from '../../assets/FIOS PDO.jpg'
+import UltraformerImg from '../../assets/Ultraformer.jpg'
+import LavieeenImg from '../../assets/lavieen.jpg'
 
 function Procedimentos() {
   return (
@@ -17,58 +25,58 @@ function Procedimentos() {
         <div className='procedimentos-grid'>
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem de Botox */}
+              <img src={BotoxImg} alt="Botox" />
             </div>
             <h3>Botox</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem de Preenchimento labial */}
+              <img src={PreenchimentoImg} alt="Preenchimento labial" />
             </div>
             <h3>Preenchimento labial</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem de MesojectGun */}
+              <img src={MesojectGunImg} alt="MesojectGun" />
             </div>
             <h3>MesojectGun</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem de Terapia capilar */}
+              <img src={TerapiaCapilarImg} alt="Terapia capilar" />
             </div>
             <h3>Terapia capilar</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem */}
+              <img src={ManchasImg} alt="Tratamento de manchas" />
             </div>
-            <h3>Bioestimuladores</h3>
+            <h3>Tratamento de manchas</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem */}
+              <img src={FiosPDOImg} alt="Fios de PDO" />
             </div>
-            <h3>Harmonização facial</h3>
+            <h3>Fios de PDO</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem */}
+              <img src={UltraformerImg} alt="Ultraformer MPT" />
             </div>
-            <h3>Peeling</h3>
+            <h3>Ultraformer MPT</h3>
           </div>
 
           <div className='procedimento-card'>
             <div className='procedimento-image'>
-              {/* Placeholder para imagem */}
+              <img src={LavieeenImg} alt="Laser Lavieen" />
             </div>
-            <h3>Microagulhamento</h3>
+            <h3>Laser Lavieen</h3>
           </div>
         </div>
       </div>
