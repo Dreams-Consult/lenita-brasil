@@ -1,6 +1,7 @@
 import './index.css'
 import { Button } from '../Button'
 import clinicImage from '../../assets/CLINICA.jpg'
+import { motion } from 'framer-motion'
 
 function Clinica() {
   function handleClick() {
@@ -8,10 +9,28 @@ function Clinica() {
   }
 
   return (
-    <div id='clinica' className='clinica'>
+    <motion.div 
+      id='clinica' 
+      className='clinica'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className='clinica-content'>
-        <div className='clinica-text'>
-          <h1>Clínica Lenita Brasil</h1>
+        <motion.div 
+          className='clinica-text'
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.h1
+            whileHover={{ scale: 1.05, color: '#8C5838' }}
+            transition={{ duration: 0.3 }}
+          >
+            Clínica Lenita Brasil
+          </motion.h1>
           <p>
             Em nossa clínica, sua experiência começa antes do
             procedimento. O tratamento exclusivo tem o olhar
@@ -20,13 +39,25 @@ function Clinica() {
             procedimentos que mais fazem sentido para a sua
             história e para a imagem que você deseja expressar.
           </p>
-          <Button text='Saiba mais' onClick={handleClick}/>
-        </div>
-        <div className='clinica-image'>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button text='Saiba mais' onClick={handleClick}/>
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className='clinica-image'
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          whileHover={{ scale: 1.05 }}
+        >
           <img src={clinicImage} alt='Clínica Lenita Brasil' />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

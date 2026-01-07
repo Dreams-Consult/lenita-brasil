@@ -1,6 +1,7 @@
 import './index.css'
 import belemImage from '../../assets/BELEM-EDIT-1.png'
 import castanhalImage from '../../assets/CASTANHAL-EDIT-1.png'
+import { motion } from 'framer-motion'
 
 function Laboratorios() {
   function handleLocationClick(address: string) {
@@ -9,46 +10,91 @@ function Laboratorios() {
   }
 
   return (
-    <div id='laboratorios' className='laboratorios'>
+    <motion.div 
+      id='laboratorios' 
+      className='laboratorios'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className='laboratorios-content'>
-        <h1>Laboratórios Lenita Brasil</h1>
-        <p className='laboratorios-intro'>
+        <motion.h1
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.05, color: '#8C5838' }}
+        >
+          Laboratórios Lenita Brasil
+        </motion.h1>
+        <motion.p 
+          className='laboratorios-intro'
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Os Laboratórios Lenita Brasil contam com duas unidades prontas para receber você. 
           Realizamos seus exames com rigor técnico, responsabilidade e agilidade, garantindo uma 
           experiência tranquila e segura em todas as etapas do atendimento.
-        </p>
+        </motion.p>
         
         <div className='laboratorios-grid'>
-          <div className='unidade-card'>
+          <motion.div 
+            className='unidade-card'
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            whileHover={{ scale: 1.05, y: -10 }}
+          >
             <div className='card-image'>
               <img src={belemImage} alt="Laboratório Unidade Belém" />
               <span className='badge'>UNIDADE BELÉM</span>
             </div>
             <div className='card-info'>
               <p className='endereco'>R. Bernal do Couto, nº 75 - Umarizal</p>
-              <button className='location-btn' onClick={() => handleLocationClick('R. Bernal do Couto, 75 - Umarizal, Belém - PA')}>
+              <motion.button 
+                className='location-btn' 
+                onClick={() => handleLocationClick('R. Bernal do Couto, 75 - Umarizal, Belém - PA')}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <span className='location-icon'>📍</span>
                 Saiba como chegar
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className='unidade-card'>
+          <motion.div 
+            className='unidade-card'
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            whileHover={{ scale: 1.05, y: -10 }}
+          >
             <div className='card-image'>
               <img src={castanhalImage} alt="Laboratório Unidade Castanhal" />
               <span className='badge'>UNIDADE CASTANHAL</span>
             </div>
             <div className='card-info'>
               <p className='endereco'>Av. Marechal Deodoro, nº 368 - Ianetama</p>
-              <button className='location-btn' onClick={() => handleLocationClick('Av. Marechal Deodoro, 368 - Ianetama, Castanhal - PA')}>
+              <motion.button 
+                className='location-btn' 
+                onClick={() => handleLocationClick('Av. Marechal Deodoro, 368 - Ianetama, Castanhal - PA')}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <span className='location-icon'>📍</span>
                 Saiba como chegar
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
