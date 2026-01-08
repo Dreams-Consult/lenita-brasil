@@ -14,6 +14,7 @@ type NavBarProps = {
 function NavBar({ isMobile }: NavBarProps) {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [mousePosition, setMousePosition] = useState(50)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,13 @@ function NavBar({ isMobile }: NavBarProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const percentage = (x / rect.width) * 100
+    setMousePosition(percentage)
+  }
+
   return (
     <AnimatePresence>
       <motion.div 
@@ -42,6 +50,10 @@ function NavBar({ isMobile }: NavBarProps) {
         initial={{ y: -100 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3 }}
+        onMouseMove={handleMouseMove}
+        style={{
+          '--mouse-x': `${mousePosition}%`
+        } as React.CSSProperties}
       >
         <motion.div 
           className='logo-section'

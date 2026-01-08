@@ -27,8 +27,8 @@ function Procedimentos() {
       className='procedimentos'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
     >
       <div className='procedimentos-content'>
         <motion.h1
@@ -45,7 +45,7 @@ function Procedimentos() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           Na Clínica Lenita Brasil, seu tratamento estético é conduzido com técnica avançada, 
           equipamentos modernos e atenção cuidadosa às suas principais necessidades e desejos. 
@@ -70,8 +70,8 @@ function Procedimentos() {
               className='procedimento-card'
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               whileHover={{ scale: 1.1, y: -10, rotateZ: 2 }}
             >
               <div className='procedimento-image'>

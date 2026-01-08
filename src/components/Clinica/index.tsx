@@ -14,16 +14,16 @@ function Clinica() {
       className='clinica'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
     >
       <div className='clinica-content'>
         <motion.div 
           className='clinica-text'
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           <motion.h1
             whileHover={{ scale: 1.05, color: '#8C5838' }}
@@ -50,8 +50,8 @@ function Clinica() {
           className='clinica-image'
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ scale: 1.05 }}
         >
           <img src={clinicImage} alt='Clínica Lenita Brasil' />

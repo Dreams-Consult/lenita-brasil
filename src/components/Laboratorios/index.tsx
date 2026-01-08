@@ -15,8 +15,8 @@ function Laboratorios() {
       className='laboratorios'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
     >
       <div className='laboratorios-content'>
         <motion.h1
@@ -33,7 +33,7 @@ function Laboratorios() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           Os Laboratórios Lenita Brasil contam com duas unidades prontas para receber você. 
           Realizamos seus exames com rigor técnico, responsabilidade e agilidade, garantindo uma 
@@ -45,8 +45,8 @@ function Laboratorios() {
             className='unidade-card'
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.05, y: -10 }}
           >
             <div className='card-image'>
@@ -71,8 +71,8 @@ function Laboratorios() {
             className='unidade-card'
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.05, y: -10 }}
           >
             <div className='card-image'>

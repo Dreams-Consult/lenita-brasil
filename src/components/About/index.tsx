@@ -9,15 +9,15 @@ function About() {
       className='sobre'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
     >
       <motion.div 
         className='sobre-image'
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         whileHover={{ scale: 1.05, rotate: 2 }}
       >
         <img className='avatar' src={avatar} alt='avatar' />
@@ -27,8 +27,8 @@ function About() {
         className='sobre-text'
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         <motion.h1
           whileHover={{ scale: 1.05, color: '#8C5838' }}

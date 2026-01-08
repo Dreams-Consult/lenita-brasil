@@ -6,7 +6,7 @@ import { Clinica } from './components/Clinica'
 import { Laboratorios } from './components/Laboratorios'
 import { Exames } from './components/Exames'
 import { Procedimentos } from './components/Procedimentos'
-// import { Contato } from './components/Contato'
+import { Contato } from './components/Contato'
 import { Footer } from './components/Footer'
 import { useMediaQuery } from 'react-responsive';
 
@@ -22,8 +22,7 @@ function App() {
       <Laboratorios />
       <Exames />
       <Procedimentos />
-      
-      {/* <Contato /> */}
+      <Contato />
       <Footer />
     </>
   )

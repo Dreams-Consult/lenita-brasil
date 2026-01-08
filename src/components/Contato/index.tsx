@@ -1,6 +1,6 @@
 import './index.css'
 import { Button } from '../Button'
-import { Input } from '../Input'
+import whatsapp from '../../assets/whatsapp-icon.svg'
 import { useState } from 'react'
 
 function Contato() {
@@ -25,77 +25,65 @@ function Contato() {
     <div id='contato' className='contato'>
       <div className='contato-content'>
         <div className='contato-info'>
-          <h1>Entre em Contato</h1>
+          <h1>Estamos prontos<br/>para cuidar de você.</h1>
           <p className='contato-intro'>
-            Estamos prontos para atendê-lo e esclarecer todas as suas dúvidas. 
-            Entre em contato conosco através dos canais abaixo ou preencha o formulário.
+            Quer agendar uma consulta, exame ou saber mais<br/>
+            sobre nossos tratamentos? Preencha o formulário<br/>
+            e fale com nossa equipe.
           </p>
 
-          <div className='info-block'>
-            <h3>📍 Endereço</h3>
-            <p>Rua Example, 123 - Centro<br/>São Paulo - SP<br/>CEP: 01234-567</p>
-          </div>
-
-          <div className='info-block'>
-            <h3>📞 Telefone</h3>
-            <p>(11) 98765-4321<br/>(11) 3456-7890</p>
-          </div>
-
-          <div className='info-block'>
-            <h3>⏰ Horário de Atendimento</h3>
-            <p>Segunda a Sexta: 8h às 18h<br/>Sábado: 8h às 12h</p>
-          </div>
-
-          <div className='info-block'>
-            <h3>✉️ E-mail</h3>
-            <p>contato@lenitabrasil.com.br</p>
-          </div>
+          <p className='contato-whatsapp-label'>Ou entre em contato pelo whatsaap</p>
+          
+          <a href='https://wa.me/5591996040003' target='_blank' rel='noopener noreferrer' className='whatsapp-link'>
+            <img src={whatsapp} alt='WhatsApp' width={32} />
+            <span>91 99604-0003</span>
+          </a>
         </div>
 
         <div className='contato-form'>
-          <h2>Envie sua Mensagem</h2>
           <div className='form-group'>
-            <label>Nome *</label>
-            <Input 
+            <input 
+              type='text'
+              className='form-input'
               value={nome} 
-              placeholder='Seu nome completo' 
+              placeholder='Seu Nome' 
               onChange={(e) => setNome(e.target.value)}
-              showSearchIcon={false}
             />
           </div>
 
           <div className='form-group'>
-            <label>Telefone *</label>
-            <Input 
-              value={telefone} 
-              placeholder='(00) 00000-0000' 
-              onChange={(e) => setTelefone(e.target.value)}
-              showSearchIcon={false}
-            />
-          </div>
-
-          <div className='form-group'>
-            <label>E-mail *</label>
-            <Input 
+            <input 
+              type='email'
+              className='form-input'
               value={email} 
-              placeholder='seu@email.com' 
+              placeholder='Seu E-mail' 
               onChange={(e) => setEmail(e.target.value)}
-              showSearchIcon={false}
             />
           </div>
 
           <div className='form-group'>
-            <label>Mensagem</label>
-            <textarea 
-              className='textarea-contato'
-              value={mensagem} 
-              placeholder='Como podemos ajudá-lo?' 
-              onChange={(e) => setMensagem(e.target.value)}
-              rows={5}
+            <input 
+              type='tel'
+              className='form-input'
+              value={telefone} 
+              placeholder='Seu Telefone' 
+              onChange={(e) => setTelefone(e.target.value)}
             />
           </div>
 
-          <Button text='Enviar mensagem' onClick={handleSubmit}/>
+          <div className='form-group'>
+            <textarea 
+              className='form-textarea'
+              value={mensagem} 
+              placeholder='Mensagem' 
+              onChange={(e) => setMensagem(e.target.value)}
+              rows={4}
+            />
+          </div>
+
+          <div className='form-button-wrapper'>
+            <Button text='Enviar' onClick={handleSubmit}/>
+          </div>
         </div>
       </div>
     </div>

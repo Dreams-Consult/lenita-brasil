@@ -12,8 +12,8 @@ function Exames() {
       className='exames'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
     >
       <div className='exames-content'>
         <motion.h1
@@ -30,7 +30,7 @@ function Exames() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           Nossos laboratórios estão entre os mais completos do Pará. Todos oferecem excelência 
           técnica, equipamentos modernos e de alta precisão, com rapidez na entrega de todos os 
