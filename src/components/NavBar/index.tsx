@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo-horizontal.png'
 import instagram from '../../assets/instagram-icon.svg'
 import whatsapp from '../../assets/whatsapp-icon.svg'
@@ -15,6 +16,10 @@ function NavBar({ isMobile }: NavBarProps) {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [mousePosition, setMousePosition] = useState(50)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +48,19 @@ function NavBar({ isMobile }: NavBarProps) {
     setMousePosition(percentage)
   }
 
+  const handleNavClick = (section: string) => {
+    if (!isHomePage) {
+      navigate('/')
+      setTimeout(() => {
+        const element = document.getElementById(section)
+        element?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      const element = document.getElementById(section)
+      element?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <AnimatePresence>
       <motion.div 
@@ -60,7 +78,11 @@ function NavBar({ isMobile }: NavBarProps) {
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
         >
-          <a href='#banner'>
+          <a href='/' onClick={(e) => { 
+            e.preventDefault(); 
+            navigate('/'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}>
             <img src={logo} alt='logo' width={200}/>
           </a>
         </motion.div>
@@ -70,6 +92,7 @@ function NavBar({ isMobile }: NavBarProps) {
             <nav className='nav-links'>
               <motion.a 
                 href='#sobre'
+                onClick={(e) => { e.preventDefault(); handleNavClick('sobre'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
                 transition={{ duration: 0.2 }}
               >
@@ -77,6 +100,7 @@ function NavBar({ isMobile }: NavBarProps) {
               </motion.a>
               <motion.a 
                 href='#clinica'
+                onClick={(e) => { e.preventDefault(); handleNavClick('clinica'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
                 transition={{ duration: 0.2 }}
               >
@@ -84,6 +108,7 @@ function NavBar({ isMobile }: NavBarProps) {
               </motion.a>
               <motion.a 
                 href='#procedimentos'
+                onClick={(e) => { e.preventDefault(); handleNavClick('procedimentos'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
                 transition={{ duration: 0.2 }}
               >
@@ -91,6 +116,7 @@ function NavBar({ isMobile }: NavBarProps) {
               </motion.a>
               <motion.a 
                 href='#laboratorios'
+                onClick={(e) => { e.preventDefault(); handleNavClick('laboratorios'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
                 transition={{ duration: 0.2 }}
               >
@@ -98,6 +124,7 @@ function NavBar({ isMobile }: NavBarProps) {
               </motion.a>
               <motion.a 
                 href='#exames'
+                onClick={(e) => { e.preventDefault(); handleNavClick('exames'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
                 transition={{ duration: 0.2 }}
               >

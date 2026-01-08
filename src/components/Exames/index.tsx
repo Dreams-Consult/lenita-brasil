@@ -1,9 +1,12 @@
 import './index.css'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 function Exames() {
+  const navigate = useNavigate()
+
   function handleCategoryClick(category: string) {
-    alert(`Você selecionou: ${category}`)
+    navigate(`/exames/${category}`)
   }
 
   return (
@@ -40,7 +43,7 @@ function Exames() {
         <div className='exames-categories'>
           <motion.button 
             className='category-btn' 
-            onClick={() => handleCategoryClick('Hematológicos')}
+            onClick={() => handleCategoryClick('hematologicos')}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -52,7 +55,7 @@ function Exames() {
           </motion.button>
           <motion.button 
             className='category-btn' 
-            onClick={() => handleCategoryClick('Bioquímicos')}
+            onClick={() => handleCategoryClick('bioquimicos')}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -64,7 +67,7 @@ function Exames() {
           </motion.button>
           <motion.button 
             className='category-btn' 
-            onClick={() => handleCategoryClick('Hormonais')}
+            onClick={() => handleCategoryClick('hormonais')}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -76,7 +79,7 @@ function Exames() {
           </motion.button>
           <motion.button 
             className='category-btn' 
-            onClick={() => handleCategoryClick('Imunológicos')}
+            onClick={() => handleCategoryClick('imunologicos')}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}

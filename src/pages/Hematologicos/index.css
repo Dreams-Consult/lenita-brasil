@@ -1,0 +1,138 @@
+.exam-page {
+  min-height: 100vh;
+  background-color: #F9E4CA;
+  padding-top: 100px;
+}
+
+.exam-hero {
+  text-align: center;
+  padding: 80px 50px 60px;
+  background: linear-gradient(135deg, rgba(140, 88, 56, 0.1) 0%, rgba(243, 187, 144, 0.1) 100%);
+}
+
+.exam-hero h1 {
+  font-size: 56px;
+  color: #5A5143;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.exam-subtitle {
+  font-size: 22px;
+  color: #5A5143;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.exam-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 50px;
+}
+
+.exam-section {
+  margin-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.exam-section h2 {
+  font-size: 36px;
+  color: #8C5838;
+  margin-bottom: 20px;
+}
+
+.exam-section p {
+  font-size: 18px;
+  color: #5A5143;
+  line-height: 1.8;
+}
+
+.exam-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.exam-item {
+  background-color: rgba(249, 228, 202, 0.5);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 4px solid #8C5838;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exam-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(140, 88, 56, 0.15);
+}
+
+.exam-item h3 {
+  font-size: 22px;
+  color: #8C5838;
+  margin-bottom: 12px;
+}
+
+.exam-item p {
+  font-size: 16px;
+  color: #5A5143;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.exam-highlight {
+  background: linear-gradient(135deg, rgba(140, 88, 56, 0.15) 0%, rgba(243, 187, 144, 0.15) 100%);
+  border: 2px solid #8C5838;
+}
+
+@media screen and (max-width: 768px) {
+  .exam-page {
+    padding-top: 80px;
+  }
+
+  .exam-hero {
+    padding: 60px 25px 40px;
+  }
+
+  .exam-hero h1 {
+    font-size: 36px;
+  }
+
+  .exam-subtitle {
+    font-size: 18px;
+  }
+
+  .exam-content {
+    padding: 40px 25px;
+  }
+
+  .exam-section {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .exam-section h2 {
+    font-size: 28px;
+  }
+
+  .exam-section p {
+    font-size: 16px;
+  }
+
+  .exam-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exam-item h3 {
+    font-size: 20px;
+  }
+
+  .exam-item p {
+    font-size: 15px;
+  }
+}

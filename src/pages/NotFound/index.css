@@ -1,0 +1,69 @@
+.not-found-page {
+  min-height: 100vh;
+  background-color: #F9E4CA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.not-found-content h1 {
+  font-size: 120px;
+  color: #8C5838;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.not-found-content h2 {
+  font-size: 42px;
+  color: #5A5143;
+  margin-bottom: 20px;
+}
+
+.not-found-content p {
+  font-size: 20px;
+  color: #5A5143;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.back-home-btn {
+  padding: 16px 50px;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: #5A5143;
+  color: #F9E4CA;
+  border: none;
+  cursor: pointer;
+  font-family: "Nata Sans", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .not-found-page {
+    padding: 80px 25px;
+  }
+
+  .not-found-content h1 {
+    font-size: 80px;
+  }
+
+  .not-found-content h2 {
+    font-size: 32px;
+  }
+
+  .not-found-content p {
+    font-size: 18px;
+  }
+
+  .back-home-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+}
