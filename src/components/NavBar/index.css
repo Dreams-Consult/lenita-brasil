@@ -138,7 +138,7 @@
   }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1100px){
   .NavBar {
     padding: 15px 20px;
     flex-direction: row;
@@ -152,10 +152,11 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
   }
 
   .logo-section {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
   }
@@ -171,8 +172,27 @@
 
   .hamburger-btn {
     display: flex;
-    align-self: center;
+    align-items: center;
     flex-shrink: 0;
+  }
+
+  .mobile-social-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex: 1 1 auto;
+  }
+
+  .mobile-social-center a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-social-center img {
+    filter: sepia(1) saturate(2) hue-rotate(10deg) brightness(0.8);
+    display: block;
   }
 
   .nav-links-mobile {

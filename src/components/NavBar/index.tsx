@@ -94,19 +94,88 @@ function NavBar({ isMobile }: NavBarProps) {
           '--mouse-x': `${mousePosition}%`
         } as React.CSSProperties}
       >
-        <motion.div 
-          className='logo-section'
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <a href='/' onClick={(e) => { 
-            e.preventDefault(); 
-            navigate('/'); 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}>
-            <img src={logo} alt='logo' width={200}/>
-          </a>
-        </motion.div>
+        {!isMobile ? (
+          <div className='navbar-main-content'>
+            <motion.div 
+              className='logo-section'
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a href='/' onClick={(e) => { 
+                e.preventDefault(); 
+                navigate('/'); 
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}>
+                <img src={logo} alt='logo' width={200}/>
+              </a>
+            </motion.div>
+
+            {!isMenuOpen && (
+              <div className='mobile-social-center'>
+                <motion.a 
+                  href='https://www.instagram.com/dra.lenitabrasil' 
+                  target='_blank' 
+                  rel='noopener noreferrer'
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <img src={instagram} alt='instagram' width={24} />
+                </motion.a>
+                <motion.a 
+                  href='https://wa.me/5591996040003' 
+                  target='_blank' 
+                  rel='noopener noreferrer'
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <img src={whatsapp} alt='whatsapp' width={24} />
+                </motion.a>
+                <motion.a 
+                  href='https://www.facebook.com/people/Dra-Lenita-Brasil/61579320161159/' 
+                  target='_blank' 
+                  rel='noopener noreferrer'
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <img src={facebook} alt='facebook' width={24} />
+                </motion.a>
+              </div>
+            )}
+
+            <motion.button 
+              className='hamburger-btn'
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+              aria-label='Menu'
+            >
+              <motion.span 
+                animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 8 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -8 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.button>
+          </div>
+        ) : (
+          <>
+            <motion.div 
+              className='logo-section'
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a href='/' onClick={(e) => { 
+                e.preventDefault(); 
+                navigate('/'); 
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}>
+                <img src={logo} alt='logo' width={200}/>
+              </a>
+            </motion.div>
+          </>
+        )}
 
         {
           isMobile && (
@@ -152,30 +221,6 @@ function NavBar({ isMobile }: NavBarProps) {
                 Procedimentos
               </motion.a>
             </nav>
-          )
-        }
-
-        {
-          !isMobile && (
-            <motion.button 
-              className='hamburger-btn'
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              whileTap={{ scale: 0.9 }}
-              aria-label='Menu'
-            >
-              <motion.span 
-                animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 8 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span 
-                animate={{ opacity: isMenuOpen ? 0 : 1 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span 
-                animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -8 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
           )
         }
 
