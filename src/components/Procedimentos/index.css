@@ -53,15 +53,20 @@
 .procedimento-image {
   width: 100%;
   height: 280px;
-  background-color: #E5D4C1;
   border-radius: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }
 
 .procedimento-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .procedimento-card > h3 {

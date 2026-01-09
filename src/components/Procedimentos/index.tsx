@@ -8,18 +8,26 @@ import FiosPDOImg from '../../assets/FIOS PDO.jpg'
 import UltraformerImg from '../../assets/Ultraformer.jpg'
 import LavieeenImg from '../../assets/lavieen.jpg'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 function Procedimentos() {
+  const navigate = useNavigate()
+
   const procedimentos = [
-    { img: BotoxImg, title: 'Botox' },
-    { img: PreenchimentoImg, title: 'Preenchimento labial' },
-    { img: MesojectGunImg, title: 'MesojectGun' },
-    { img: TerapiaCapilarImg, title: 'Terapia capilar' },
-    { img: ManchasImg, title: 'Tratamento de manchas' },
-    { img: FiosPDOImg, title: 'Fios de PDO' },
-    { img: UltraformerImg, title: 'Ultraformer MPT' },
-    { img: LavieeenImg, title: 'Laser Lavieen' },
+    { img: BotoxImg, title: 'Botox', link: '/procedimentos/botox' },
+    { img: PreenchimentoImg, title: 'Preenchimento labial', link: '/procedimentos/preenchimento-labial' },
+    { img: MesojectGunImg, title: 'MesojectGun', link: '/procedimentos/mesojectgun' },
+    { img: TerapiaCapilarImg, title: 'Terapia capilar', link: '/procedimentos/terapia-capilar' },
+    { img: ManchasImg, title: 'Tratamento de manchas', link: '/procedimentos/tratamento-manchas' },
+    { img: FiosPDOImg, title: 'Fios de PDO', link: '/procedimentos/fios-pdo' },
+    { img: UltraformerImg, title: 'Ultraformer MPT', link: '/procedimentos/ultraformer-mpt' },
+    { img: LavieeenImg, title: 'Laser Lavieen', link: '/procedimentos/laser-lavieen' },
   ]
+
+  const handleCardClick = (link: string) => {
+    navigate(link)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <motion.div 
@@ -73,6 +81,8 @@ function Procedimentos() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               whileHover={{ scale: 1.1, y: -10, rotateZ: 2 }}
+              onClick={() => handleCardClick(proc.link)}
+              style={{ cursor: 'pointer' }}
             >
               <div className='procedimento-image'>
                 <img src={proc.img} alt={proc.title} />
