@@ -1,18 +1,18 @@
 .contato {
   display: flex;
   width: 100%;
-  min-height: 90vh;
+  min-height: 70vh;
   background-color: #F9E4CA;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .contato-content {
   max-width: 1400px;
   padding: 0 80px;
   display: flex;
-  gap: 100px;
+  gap: 60px;
   width: 100%;
   align-items: flex-start;
   box-sizing: border-box;
@@ -26,17 +26,17 @@
 }
 
 .contato-info > h1 {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: bold;
   color: #5A5143;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .contato-intro {
   font-size: 18px;
   color: #5A5143;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   line-height: 1.6;
 }
 
@@ -70,7 +70,7 @@
   max-width: 640px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
 }
 
@@ -81,7 +81,7 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 18px 0;
+  padding: 14px 0;
   border: none;
   border-bottom: 1px solid #8B6F47;
   background-color: transparent;
@@ -112,7 +112,7 @@
 .form-button-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .form-button-wrapper button {

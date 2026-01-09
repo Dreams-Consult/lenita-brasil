@@ -31,7 +31,7 @@
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px;
 }
 
 .footer-nav a {
@@ -178,109 +178,41 @@
 
 @media screen and (max-width: 1100px){
   .footer {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 60px 50px;
-    gap: 50px;
-    align-items: center;
+    gap: 40px 80px;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .logo-column {
-    flex-direction: column;
+    flex: 0 0 calc(50% - 40px);
+    min-width: 280px;
     align-items: center;
     text-align: center;
     gap: 20px;
-    width: 100%;
   }
 
   .footer-logo {
-    width: 180px;
+    width: 160px;
   }
 
   .footer-nav {
     align-items: center;
-    width: 100%;
+  }
+
+  .footer-column:has(.footer-nav) {
+    flex: 0 0 calc(50% - 40px);
+    min-width: 280px;
+    align-items: center;
+    text-align: center;
   }
 
   .cta-column {
+    flex: 0 0 calc(50% - 40px);
+    min-width: 280px;
     text-align: center;
-    width: 100%;
-    align-items: center;
-  }
-
-  .cta-column h2 {
-    font-size: 22px;
-  }
-
-  .whatsapp-btn {
-    width: 100%;
-    max-width: 350px;
-    justify-content: center;
-  }
-
-  .contact-column {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .unidade-badge {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .unidade-info {
-    align-items: center;
-    width: 100%;
-  }
-
-  .unidade-info p {
-    text-align: center;
-  }
-
-  .divider {
-    max-width: 350px;
-  }
-
-  .social-footer {
-    align-items: center;
-    width: 100%;
-  }
-
-  .social-item {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 715px){
-  .footer {
-    padding: 50px 20px;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .logo-column {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .footer-logo {
-    width: 150px;
-  }
-
-  .footer-nav {
-    align-items: center;
-    width: 100%;
-  }
-
-  .footer-nav a {
-    font-size: 14px;
-  }
-
-  .cta-column {
-    text-align: center;
-    width: 100%;
     align-items: center;
   }
 
@@ -288,32 +220,26 @@
     font-size: 20px;
   }
 
-  .cta-column p {
-    font-size: 14px;
-  }
-
   .whatsapp-btn {
-    font-size: 16px;
-    padding: 10px 25px;
-    width: 100%;
-    max-width: 300px;
+    width: fit-content;
+    max-width: 100%;
     justify-content: center;
   }
 
   .contact-column {
+    flex: 0 0 calc(50% - 40px);
+    min-width: 280px;
     align-items: center;
     text-align: center;
-    width: 100%;
   }
 
   .unidade-badge {
-    width: 100%;
-    max-width: 300px;
+    width: fit-content;
+    max-width: 100%;
   }
 
   .unidade-info {
     align-items: center;
-    width: 100%;
   }
 
   .unidade-info p {
@@ -321,12 +247,11 @@
   }
 
   .divider {
-    max-width: 300px;
+    max-width: 350px;
   }
 
   .social-footer {
     align-items: center;
-    width: 100%;
   }
 
   .social-item {

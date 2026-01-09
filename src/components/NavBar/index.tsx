@@ -14,32 +14,52 @@ type NavBarProps = {
 
 function NavBar({ isMobile }: NavBarProps) {
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [mousePosition, setMousePosition] = useState(50)
+  const [lastMouseY, setLastMouseY] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
 
   const isHomePage = location.pathname === '/'
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      if (currentScrollY < 50) {
-        setIsVisible(true)
-      } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
-      
-      setLastScrollY(currentScrollY)
+    // No mobile, sempre visível
+    if (!isMobile) {
+      setIsVisible(true)
+      return
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const atTop = currentScrollY < 100
+      
+      if (atTop) {
+        setIsVisible(true)
+      } else {
+        // Se não estiver no topo, verifica a posição do mouse
+        setIsVisible(lastMouseY <= 100)
+      }
+    }
 
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+    const handleMouseMove = (e: MouseEvent) => {
+      setLastMouseY(e.clientY)
+      
+      if (window.scrollY < 100) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(e.clientY <= 100)
+      }
+    }
+
+    handleScroll() // Verifica posição inicial
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [lastMouseY, isMobile])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -49,6 +69,7 @@ function NavBar({ isMobile }: NavBarProps) {
   }
 
   const handleNavClick = (section: string) => {
+    setIsMenuOpen(false) // Fecha o menu ao clicar em um link
     if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
@@ -134,35 +155,142 @@ function NavBar({ isMobile }: NavBarProps) {
           )
         }
 
-        <div className='social-section'>
-          <motion.a 
-            href='https://www.instagram.com/dra.lenitabrasil' 
-            target='_blank' 
-            rel='noopener noreferrer'
-            whileHover={{ scale: 1.3, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <img src={instagram} alt='instagram' width={28} />
-          </motion.a>
-          <motion.a 
-            href='https://wa.me/5591996040003' 
-            target='_blank' 
-            rel='noopener noreferrer'
-            whileHover={{ scale: 1.3, rotate: -10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <img src={whatsapp} alt='whatsapp' width={28} />
-          </motion.a>
-          <motion.a 
-            href='https://www.facebook.com/people/Dra-Lenita-Brasil/61579320161159/' 
-            target='_blank' 
-            rel='noopener noreferrer'
-            whileHover={{ scale: 1.3, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <img src={facebook} alt='facebook' width={28} />
-          </motion.a>
-        </div>
+        {
+          !isMobile && (
+            <motion.button 
+              className='hamburger-btn'
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+              aria-label='Menu'
+            >
+              <motion.span 
+                animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 8 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -8 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.button>
+          )
+        }
+
+        {
+          !isMobile && (
+            <AnimatePresence>
+              {isMenuOpen && (
+                <motion.nav 
+                  className='nav-links-mobile'
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.a 
+                    href='#sobre'
+                    onClick={(e) => { e.preventDefault(); handleNavClick('sobre'); }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Dra. Lenita Brasil
+                  </motion.a>
+                  <motion.a 
+                    href='#clinica'
+                    onClick={(e) => { e.preventDefault(); handleNavClick('clinica'); }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Clínica
+                  </motion.a>
+                  <motion.a 
+                    href='#laboratorios'
+                    onClick={(e) => { e.preventDefault(); handleNavClick('laboratorios'); }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Laboratórios
+                  </motion.a>
+                  <motion.a 
+                    href='#exames'
+                    onClick={(e) => { e.preventDefault(); handleNavClick('exames'); }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Exames
+                  </motion.a>
+                  <motion.a 
+                    href='#procedimentos'
+                    onClick={(e) => { e.preventDefault(); handleNavClick('procedimentos'); }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Procedimentos
+                  </motion.a>
+                  
+                  <div className='mobile-social-section'>
+                    <motion.a 
+                      href='https://www.instagram.com/dra.lenitabrasil' 
+                      target='_blank' 
+                      rel='noopener noreferrer'
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <img src={instagram} alt='instagram' width={24} />
+                    </motion.a>
+                    <motion.a 
+                      href='https://wa.me/5591996040003' 
+                      target='_blank' 
+                      rel='noopener noreferrer'
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <img src={whatsapp} alt='whatsapp' width={24} />
+                    </motion.a>
+                    <motion.a 
+                      href='https://www.facebook.com/people/Dra-Lenita-Brasil/61579320161159/' 
+                      target='_blank' 
+                      rel='noopener noreferrer'
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <img src={facebook} alt='facebook' width={24} />
+                    </motion.a>
+                  </div>
+                </motion.nav>
+              )}
+            </AnimatePresence>
+          )
+        }
+
+        {
+          isMobile && (
+            <div className='social-section'>
+              <motion.a 
+                href='https://www.instagram.com/dra.lenitabrasil' 
+                target='_blank' 
+                rel='noopener noreferrer'
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={instagram} alt='instagram' width={28} />
+              </motion.a>
+              <motion.a 
+                href='https://wa.me/5591996040003' 
+                target='_blank' 
+                rel='noopener noreferrer'
+                whileHover={{ scale: 1.3, rotate: -10 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={whatsapp} alt='whatsapp' width={28} />
+              </motion.a>
+              <motion.a 
+                href='https://www.facebook.com/people/Dra-Lenita-Brasil/61579320161159/' 
+                target='_blank' 
+                rel='noopener noreferrer'
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={facebook} alt='facebook' width={28} />
+              </motion.a>
+            </div>
+          )
+        }
       </motion.div>
     </AnimatePresence>
   )

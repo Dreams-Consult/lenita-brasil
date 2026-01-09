@@ -43,7 +43,7 @@
         "Colesterol",
         "Ureia e Creatinina"
       ],
-      "video": "",
+      "video": "https://www.youtube.com/embed/IpSDW3Mq-7E",
       "videoOrientation": "horizontal",
       "examesDetalhados": [
         {
@@ -81,7 +81,8 @@
         "Testosterona",
         "Estradiol"
       ],
-      "video": "",
+      "video": "https://www.youtube.com/embed/IpSDW3Mq-7E",
+      "videoOrientation": "horizontal",
       "examesDetalhados": [
         {
           "nome": "TSH e T4 Livre",
@@ -118,7 +119,8 @@
         "Fator Reumatoide",
         "FAN"
       ],
-      "video": "",
+      "video": "https://www.youtube.com/embed/IpSDW3Mq-7E",
+      "videoOrientation": "horizontal",
       "examesDetalhados": [
         {
           "nome": "Sorologias Virais",
