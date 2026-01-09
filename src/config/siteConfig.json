@@ -44,6 +44,7 @@
         "Ureia e Creatinina"
       ],
       "video": "",
+      "videoOrientation": "horizontal",
       "examesDetalhados": [
         {
           "nome": "Glicemia",

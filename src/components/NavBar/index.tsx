@@ -107,14 +107,6 @@ function NavBar({ isMobile }: NavBarProps) {
                 Clínica
               </motion.a>
               <motion.a 
-                href='#procedimentos'
-                onClick={(e) => { e.preventDefault(); handleNavClick('procedimentos'); }}
-                whileHover={{ scale: 1.1, color: '#F3BB90' }}
-                transition={{ duration: 0.2 }}
-              >
-                Procedimentos
-              </motion.a>
-              <motion.a 
                 href='#laboratorios'
                 onClick={(e) => { e.preventDefault(); handleNavClick('laboratorios'); }}
                 whileHover={{ scale: 1.1, color: '#F3BB90' }}
@@ -129,6 +121,14 @@ function NavBar({ isMobile }: NavBarProps) {
                 transition={{ duration: 0.2 }}
               >
                 Exames
+              </motion.a>
+              <motion.a 
+                href='#procedimentos'
+                onClick={(e) => { e.preventDefault(); handleNavClick('procedimentos'); }}
+                whileHover={{ scale: 1.1, color: '#F3BB90' }}
+                transition={{ duration: 0.2 }}
+              >
+                Procedimentos
               </motion.a>
             </nav>
           )

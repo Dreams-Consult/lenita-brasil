@@ -1,12 +1,17 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { YouTubePlayer } from '../../components/YouTubePlayer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import '../Hematologicos/index.css'
+import bannerImage from '../../assets/banner-exames.jpg'
+import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import siteConfig from '../../config/siteConfig.json'
+import './index.css'
 
 function Bioquimicos() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const examData = siteConfig.exames.bioquimicos
 
   return (
     <>
@@ -18,22 +23,52 @@ function Bioquimicos() {
         transition={{ duration: 0.6 }}
       >
         <div className='exam-hero'>
-          <motion.h1
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Exames Bioquímicos
-          </motion.h1>
-          <motion.p
-            className='exam-subtitle'
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Análises detalhadas das substâncias químicas presentes no organismo
-          </motion.p>
+          <img src={bannerImage} alt='Exames Bioquímicos' className='exam-hero-bg' />
+          <div className='exam-hero-overlay'>
+            <motion.h1
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {examData.titulo}
+            </motion.h1>
+          </div>
         </div>
+
+        <motion.section 
+          className='exam-intro-section'
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className='exam-intro-content'>
+            <h2>{examData.titulo}</h2>
+            <ul className='exam-intro-list'>
+              {examData.lista.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <a 
+              href={`https://wa.me/${siteConfig.contato.whatsapp}`}
+              target='_blank' 
+              rel='noopener noreferrer'
+              className='agende-btn'
+            >
+              <img src={whatsappIcon} alt='WhatsApp' width={24} />
+              Agende seu exame
+            </a>
+          </div>
+          {examData.video && (
+            <div className='exam-intro-video'>
+              <YouTubePlayer 
+                videoUrl={examData.video}
+                orientation={examData.videoOrientation as 'vertical' | 'horizontal'}
+                title={`Vídeo Explicativo ${examData.titulo}`}
+              />
+            </div>
+          )}
+        </motion.section>
 
         <div className='exam-content'>
           <motion.section 
@@ -45,10 +80,9 @@ function Bioquimicos() {
           >
             <h2>O que são Exames Bioquímicos?</h2>
             <p>
-              Os exames bioquímicos avaliam as substâncias químicas presentes no sangue e em outros 
-              fluidos corporais. Essas análises são essenciais para diagnosticar e monitorar doenças 
-              metabólicas, renais, hepáticas, cardiovasculares e nutricionais, fornecendo informações 
-              vitais sobre o funcionamento do organismo.
+              Os exames bioquímicos são análises laboratoriais que avaliam as substâncias químicas presentes no organismo, 
+              como glicose, colesterol, enzimas, hormônios e outros componentes. Esses testes são fundamentais para 
+              diagnóstico de diversas condições, monitoramento de doenças crônicas e avaliação da saúde geral.
             </p>
           </motion.section>
 
@@ -59,32 +93,14 @@ function Bioquimicos() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
           >
-            <h2>Principais Exames Oferecidos</h2>
+            <h2>Principais Exames Bioquímicos</h2>
             <div className='exam-list'>
-              <div className='exam-item'>
-                <h3>Glicemia</h3>
-                <p>Mede os níveis de glicose no sangue, fundamental para diagnóstico e controle de diabetes.</p>
-              </div>
-              <div className='exam-item'>
-                <h3>Colesterol e Triglicerídeos</h3>
-                <p>Avalia os níveis de gorduras no sangue, importantes para saúde cardiovascular.</p>
-              </div>
-              <div className='exam-item'>
-                <h3>Ureia e Creatinina</h3>
-                <p>Avaliam a função renal, detectando problemas nos rins.</p>
-              </div>
-              <div className='exam-item'>
-                <h3>TGO e TGP</h3>
-                <p>Enzimas hepáticas que avaliam a função do fígado e detectam lesões hepáticas.</p>
-              </div>
-              <div className='exam-item'>
-                <h3>Ácido Úrico</h3>
-                <p>Identifica níveis elevados que podem causar gota e problemas renais.</p>
-              </div>
-              <div className='exam-item'>
-                <h3>Eletrólitos</h3>
-                <p>Avaliam sódio, potássio e outros minerais essenciais para o equilíbrio do organismo.</p>
-              </div>
+              {examData.examesDetalhados.map((exame, index) => (
+                <div key={index} className='exam-item'>
+                  <h3>{exame.nome}</h3>
+                  <p>{exame.descricao}</p>
+                </div>
+              ))}
             </div>
           </motion.section>
 
@@ -95,31 +111,23 @@ function Bioquimicos() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
           >
-            <h2>Quando Realizar?</h2>
+            <h2>Quando Realizar Exames Bioquímicos?</h2>
             <p>
-              Recomendados para check-ups periódicos, investigação de sintomas como fadiga e náuseas, 
-              acompanhamento de doenças crônicas (diabetes, hipertensão), avaliação de risco cardiovascular 
-              e monitoramento de tratamentos medicamentosos que afetam órgãos vitais.
+              Exames bioquímicos são recomendados em diversas situações:
             </p>
-          </motion.section>
-
-          <motion.section 
-            className='exam-section exam-highlight'
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2>Nosso Diferencial</h2>
-            <p>
-              Utilizamos equipamentos automatizados de última geração que garantem precisão e rapidez 
-              nos resultados. Nossa equipe técnica especializada realiza controles de qualidade rigorosos 
-              em todas as etapas do processo analítico.
-            </p>
+            <ul>
+              <li>Check-ups preventivos anuais</li>
+              <li>Acompanhamento de doenças crônicas (diabetes, hipertensão, colesterol alto)</li>
+              <li>Avaliação pré-operatória</li>
+              <li>Investigação de sintomas específicos</li>
+              <li>Monitoramento de tratamentos medicamentosos</li>
+              <li>Avaliação da função de órgãos vitais (fígado, rins, coração)</li>
+            </ul>
           </motion.section>
         </div>
+
+        <Contato />
       </motion.div>
-      <Contato />
       <Footer />
     </>
   )
