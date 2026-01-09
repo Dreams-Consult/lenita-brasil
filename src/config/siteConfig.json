@@ -1,0 +1,153 @@
+{
+  "exames": {
+    "hematologicos": {
+      "titulo": "Exames Hematológicos",
+      "descricao": "Análises completas do sangue para diagnóstico e acompanhamento da sua saúde",
+      "banner": "banner-hematologicos.jpg",
+      "lista": [
+        "Hemograma",
+        "Tipagem sanguínea",
+        "Hemoglobina glicada"
+      ],
+      "video": "https://www.youtube.com/embed/IpSDW3Mq-7E",
+      "videoOrientation": "horizontal",
+      "examesDetalhados": [
+        {
+          "nome": "Hemograma Completo",
+          "descricao": "Avalia todos os componentes do sangue, identificando anemias, infecções e alterações na coagulação."
+        },
+        {
+          "nome": "Contagem de Plaquetas",
+          "descricao": "Mede a quantidade de plaquetas no sangue, essencial para avaliar a capacidade de coagulação."
+        },
+        {
+          "nome": "VHS (Velocidade de Hemossedimentação)",
+          "descricao": "Detecta processos inflamatórios e infecciosos no organismo."
+        },
+        {
+          "nome": "Coagulograma",
+          "descricao": "Avalia a capacidade de coagulação do sangue, importante antes de cirurgias."
+        },
+        {
+          "nome": "Tipagem Sanguínea",
+          "descricao": "Identifica o grupo sanguíneo (A, B, AB, O) e o fator Rh (positivo ou negativo)."
+        }
+      ]
+    },
+    "bioquimicos": {
+      "titulo": "Exames Bioquímicos",
+      "descricao": "Análises detalhadas das substâncias químicas presentes no organismo",
+      "banner": "",
+      "lista": [
+        "Glicemia",
+        "Colesterol",
+        "Ureia e Creatinina"
+      ],
+      "video": "",
+      "examesDetalhados": [
+        {
+          "nome": "Glicemia",
+          "descricao": "Mede os níveis de glicose no sangue, fundamental para diagnóstico e controle de diabetes."
+        },
+        {
+          "nome": "Colesterol e Triglicerídeos",
+          "descricao": "Avalia os níveis de gorduras no sangue, importantes para saúde cardiovascular."
+        },
+        {
+          "nome": "Ureia e Creatinina",
+          "descricao": "Avaliam a função renal, detectando problemas nos rins."
+        },
+        {
+          "nome": "TGO e TGP",
+          "descricao": "Enzimas hepáticas que avaliam a função do fígado e detectam lesões hepáticas."
+        },
+        {
+          "nome": "Ácido Úrico",
+          "descricao": "Identifica níveis elevados que podem causar gota e problemas renais."
+        },
+        {
+          "nome": "Eletrólitos",
+          "descricao": "Avaliam sódio, potássio e outros minerais essenciais para o equilíbrio do organismo."
+        }
+      ]
+    },
+    "hormonais": {
+      "titulo": "Exames Hormonais",
+      "descricao": "Avaliação completa do sistema endócrino e equilíbrio hormonal",
+      "banner": "",
+      "lista": [
+        "TSH e T4 Livre",
+        "Testosterona",
+        "Estradiol"
+      ],
+      "video": "",
+      "examesDetalhados": [
+        {
+          "nome": "TSH e T4 Livre",
+          "descricao": "Avaliam a função da tireoide, detectando hipo ou hipertireoidismo."
+        },
+        {
+          "nome": "Testosterona",
+          "descricao": "Importante para avaliação da função reprodutiva masculina e feminina."
+        },
+        {
+          "nome": "Estradiol e Progesterona",
+          "descricao": "Hormônios femininos essenciais para fertilidade e ciclo menstrual."
+        },
+        {
+          "nome": "Cortisol",
+          "descricao": "Hormônio do estresse, avalia função adrenal e distúrbios metabólicos."
+        },
+        {
+          "nome": "Prolactina",
+          "descricao": "Importante para investigação de infertilidade e distúrbios menstruais."
+        },
+        {
+          "nome": "Insulina",
+          "descricao": "Avalia resistência insulínica e risco de diabetes tipo 2."
+        }
+      ]
+    },
+    "imunologicos": {
+      "titulo": "Exames Imunológicos",
+      "descricao": "Avaliação do sistema imunológico e detecção de doenças infecciosas",
+      "banner": "",
+      "lista": [
+        "Sorologias Virais",
+        "Fator Reumatoide",
+        "FAN"
+      ],
+      "video": "",
+      "examesDetalhados": [
+        {
+          "nome": "Sorologias Virais",
+          "descricao": "Detectam anticorpos contra vírus como HIV, Hepatites B e C, rubéola, toxoplasmose."
+        },
+        {
+          "nome": "Fator Reumatoide",
+          "descricao": "Auxilia no diagnóstico de artrite reumatoide e outras doenças autoimunes."
+        },
+        {
+          "nome": "Proteína C Reativa (PCR)",
+          "descricao": "Marcador de inflamação e infecção, importante para diagnóstico e monitoramento."
+        },
+        {
+          "nome": "FAN (Fator Antinuclear)",
+          "descricao": "Rastreamento de doenças autoimunes como lúpus e esclerodermia."
+        },
+        {
+          "nome": "IgE Total e Específica",
+          "descricao": "Avalia alergias respiratórias, alimentares e dermatológicas."
+        },
+        {
+          "nome": "ASLO",
+          "descricao": "Detecta infecção estreptocócica recente, importante para diagnóstico de febre reumática."
+        }
+      ]
+    }
+  },
+  "contato": {
+    "whatsapp": "5591996040003",
+    "telefone": "(91) 99604-0003"
+  }
+}

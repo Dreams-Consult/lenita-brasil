@@ -1,12 +1,17 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { YouTubePlayer } from '../../components/YouTubePlayer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
+import bannerImage from '../../assets/banner-hematologicos.jpg'
+import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import siteConfig from '../../config/siteConfig.json'
 import './index.css'
 
 function Hematologicos() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const examData = siteConfig.exames.hematologicos
 
   return (
     <>
@@ -18,22 +23,50 @@ function Hematologicos() {
         transition={{ duration: 0.6 }}
       >
         <div className='exam-hero'>
-          <motion.h1
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Exames Hematológicos
-          </motion.h1>
-          <motion.p
-            className='exam-subtitle'
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Análises completas do sangue para diagnóstico e acompanhamento da sua saúde
-          </motion.p>
+          <img src={bannerImage} alt='Exames Hematológicos' className='exam-hero-bg' />
+          <div className='exam-hero-overlay'>
+            <motion.h1
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {examData.titulo}
+            </motion.h1>
+          </div>
         </div>
+
+        <motion.section 
+          className='exam-intro-section'
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className='exam-intro-content'>
+            <h2>{examData.titulo}</h2>
+            <ul className='exam-intro-list'>
+              {examData.lista.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <a 
+              href={`https://wa.me/${siteConfig.contato.whatsapp}`}
+              target='_blank' 
+              rel='noopener noreferrer'
+              className='agende-btn'
+            >
+              <img src={whatsappIcon} alt='WhatsApp' width={24} />
+              Agende seu exame
+            </a>
+          </div>
+          <div className='exam-intro-video'>
+            <YouTubePlayer 
+              videoUrl={examData.video}
+              orientation={examData.videoOrientation as 'vertical' | 'horizontal'}
+              title={`Vídeo Explicativo ${examData.titulo}`}
+            />
+          </div>
+        </motion.section>
 
         <div className='exam-content'>
           <motion.section 
