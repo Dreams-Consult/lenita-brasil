@@ -12,6 +12,9 @@ function Clinicas() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
   const [currentBelemImage, setCurrentBelemImage] = useState(0)
   const [currentCastanhalImage, setCurrentCastanhalImage] = useState(0)
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+  const [galleryImages, setGalleryImages] = useState<string[]>([])
+  const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
   
   // Imagens temporárias - substituir com as imagens reais
   const belemImages = [
@@ -40,6 +43,26 @@ function Clinicas() {
   
   const prevCastanhalImage = () => {
     setCurrentCastanhalImage((prev) => (prev - 1 + castanhalImages.length) % castanhalImages.length)
+  }
+
+  const openGallery = (images: string[], startIndex: number = 0) => {
+    setGalleryImages(images)
+    setCurrentGalleryImage(startIndex)
+    setIsGalleryOpen(true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false)
+    document.body.style.overflow = 'unset'
+  }
+
+  const nextGalleryImage = () => {
+    setCurrentGalleryImage((prev) => (prev + 1) % galleryImages.length)
+  }
+
+  const prevGalleryImage = () => {
+    setCurrentGalleryImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
   return (
@@ -121,7 +144,7 @@ function Clinicas() {
                     ))}
                   </div>
                 </div>
-                <button className='view-all-btn'>Veja todas as fotos</button>
+                <button className='view-all-btn' onClick={() => openGallery(belemImages, currentBelemImage)}>Veja todas as fotos</button>
               </div>
             </div>
             <div className='clinic-map-section'>
@@ -196,7 +219,7 @@ function Clinicas() {
                     ))}
                   </div>
                 </div>
-                <button className='view-all-btn'>Veja todas as fotos</button>
+                <button className='view-all-btn' onClick={() => openGallery(castanhalImages, currentCastanhalImage)}>Veja todas as fotos</button>
               </div>
             </div>
             <div className='clinic-map-section'>
@@ -215,6 +238,50 @@ function Clinicas() {
             </div>
           </motion.section>
         </div>
+
+        <AnimatePresence>
+          {isGalleryOpen && (
+            <motion.div 
+              className='gallery-modal'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeGallery}
+            >
+              <button className='gallery-close' onClick={closeGallery}>×</button>
+              <div className='gallery-content' onClick={(e) => e.stopPropagation()}>
+                <AnimatePresence mode='wait'>
+                  <motion.img
+                    key={currentGalleryImage}
+                    src={galleryImages[currentGalleryImage]}
+                    alt={`Foto ${currentGalleryImage + 1}`}
+                    className='gallery-image'
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </AnimatePresence>
+                <button className='gallery-nav prev' onClick={prevGalleryImage}>‹</button>
+                <button className='gallery-nav next' onClick={nextGalleryImage}>›</button>
+                <div className='gallery-counter'>
+                  {currentGalleryImage + 1} / {galleryImages.length}
+                </div>
+                <div className='gallery-thumbnails'>
+                  {galleryImages.map((img, index) => (
+                    <img
+                      key={index}
+                      src={img}
+                      alt={`Miniatura ${index + 1}`}
+                      className={`gallery-thumbnail ${index === currentGalleryImage ? 'active' : ''}`}
+                      onClick={() => setCurrentGalleryImage(index)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
       <Contato />
       <Footer />
