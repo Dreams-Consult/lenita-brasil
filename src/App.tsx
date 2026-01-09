@@ -6,6 +6,7 @@ import { Hematologicos } from './pages/Hematologicos'
 import { Bioquimicos } from './pages/Bioquimicos'
 import { Hormonais } from './pages/Hormonais'
 import { Imunologicos } from './pages/Imunologicos'
+import Clinicas from './pages/Clinicas'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/clinicas" element={<Clinicas />} />
         <Route path="/exames/hematologicos" element={<Hematologicos />} />
         <Route path="/exames/bioquimicos" element={<Bioquimicos />} />
         <Route path="/exames/hormonais" element={<Hormonais />} />

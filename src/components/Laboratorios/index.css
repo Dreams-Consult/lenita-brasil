@@ -118,6 +118,33 @@
   font-size: 18px;
 }
 
+.saiba-mais-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+
+.saiba-mais-btn {
+  padding: 16px 40px;
+  background: #8B6F47;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.2);
+}
+
+.saiba-mais-btn:hover {
+  background: #6d573a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.3);
+}
+
 @media screen and (max-width: 1300px){
   .laboratorios-content {
     padding: 0 50px;

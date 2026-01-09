@@ -2,10 +2,14 @@ import './index.css'
 import { Button } from '../Button'
 import clinicImage from '../../assets/CLINICA.jpg'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 function Clinica() {
+  const navigate = useNavigate()
+  
   function handleClick() {
-    alert("Consulta agendada com sucesso!")
+    navigate('/clinicas')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (

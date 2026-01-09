@@ -75,7 +75,7 @@ function NavBar({ isMobile }: NavBarProps) {
       setTimeout(() => {
         const element = document.getElementById(section)
         element?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
+      }, 500)
     } else {
       const element = document.getElementById(section)
       element?.scrollIntoView({ behavior: 'smooth' })
