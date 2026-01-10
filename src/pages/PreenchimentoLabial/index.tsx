@@ -11,7 +11,7 @@ import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function PreenchimentoLabial() {
-  const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
 
   const galeriaImages = [procedimentoImage, galeria1]
 

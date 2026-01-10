@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import './index.css'
 
 function NotFound() {
-  const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
   const navigate = useNavigate()
 
   return (

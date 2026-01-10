@@ -10,7 +10,7 @@ import siteConfig from '../../config/siteConfig.json'
 import './index.css'
 
 function Hematologicos() {
-  const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
   const examData = siteConfig.exames.categorias.hematologicos
 
   return (

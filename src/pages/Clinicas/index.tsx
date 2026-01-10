@@ -9,7 +9,7 @@ import '../Hematologicos/index.css'
 import './index.css'
 
 function Clinicas() {
-  const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
   const [currentBelemImage, setCurrentBelemImage] = useState(0)
   const [currentCastanhalImage, setCurrentCastanhalImage] = useState(0)
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)

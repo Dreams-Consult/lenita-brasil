@@ -59,7 +59,7 @@ function NavBar({ isMobile }: NavBarProps) {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [lastMouseY, isMobile])
+  }, [isMobile])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -94,8 +94,8 @@ function NavBar({ isMobile }: NavBarProps) {
         transition={{ duration: 0.3 }}
         onMouseMove={handleMouseMove}
         style={{
-          '--mouse-x': `${mousePosition}%`
-        } as React.CSSProperties}
+          ['--mouse-x' as any]: `${mousePosition}%`
+        }}
       >
         {isMobile ? (
           <div className='navbar-main-content'>
