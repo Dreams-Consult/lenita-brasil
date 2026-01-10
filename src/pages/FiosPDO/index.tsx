@@ -1,15 +1,19 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/fios-de-pdo/BANNER-FIOSPDO.jpg'
 import procedimentoImage from '../../assets/procedimentos/fios-de-pdo/FIOS PDO.jpg'
+import galeria1 from '../../assets/procedimentos/fios-de-pdo/grdr 2025-11-24 113137.883.JPG'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function FiosPDO() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage, galeria1]
 
   return (
     <>
@@ -67,7 +71,7 @@ function FiosPDO() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='Fios de PDO' />
+              <ImageCarousel images={galeriaImages} alt='Fios de PDO' />
             </div>
           </div>
         </motion.section>

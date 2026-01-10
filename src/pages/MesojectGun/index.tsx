@@ -1,6 +1,7 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/mesoject-gun/BANNER-MASOJECTGUN.jpg'
@@ -10,6 +11,8 @@ import '../Botox/index.css'
 
 function MesojectGun() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage]
 
   return (
     <>
@@ -67,7 +70,7 @@ function MesojectGun() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='MesojectGun' />
+              <ImageCarousel images={galeriaImages} alt='MesojectGun' />
             </div>
           </div>
         </motion.section>

@@ -1,15 +1,19 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/preenchimento-labial/BANNER-PREENCHIMENTO.jpg'
 import procedimentoImage from '../../assets/procedimentos/preenchimento-labial/PreenchimentoLabial.jpg'
+import galeria1 from '../../assets/procedimentos/preenchimento-labial/grdr 2025-12-10 145226.193.JPG'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function PreenchimentoLabial() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage, galeria1]
 
   return (
     <>
@@ -67,7 +71,7 @@ function PreenchimentoLabial() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='Preenchimento Labial' />
+              <ImageCarousel images={galeriaImages} alt='Preenchimento Labial' />
             </div>
           </div>
         </motion.section>

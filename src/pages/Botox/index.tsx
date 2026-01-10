@@ -1,15 +1,21 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/botox/BANNER-BOTOX.jpg'
 import procedimentoImage from '../../assets/procedimentos/botox/Botox.jpg'
+import galeria1 from '../../assets/procedimentos/botox/grdr 2025-11-20 154353.232.JPG'
+import galeria2 from '../../assets/procedimentos/botox/grdr 2025-11-20 154559.666.JPG'
+import galeria3 from '../../assets/procedimentos/botox/grdr 2025-11-20 154752.000.JPG'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import './index.css'
 
 function Botox() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage, galeria1, galeria2, galeria3]
 
   return (
     <>
@@ -69,7 +75,7 @@ function Botox() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='Tratamento de Botox' />
+              <ImageCarousel images={galeriaImages} alt='Tratamento de Botox' />
             </div>
           </div>
         </motion.section>

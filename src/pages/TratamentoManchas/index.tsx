@@ -1,6 +1,7 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/tratament-de-manchas/BANNER-MANCHAS.jpg'
@@ -10,6 +11,8 @@ import '../Botox/index.css'
 
 function TratamentoManchas() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage]
 
   return (
     <>
@@ -69,7 +72,7 @@ function TratamentoManchas() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='Tratamento de Manchas' />
+              <ImageCarousel images={galeriaImages} alt='Tratamento de Manchas' />
             </div>
           </div>
         </motion.section>

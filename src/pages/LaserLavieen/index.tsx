@@ -1,15 +1,19 @@
 import { NavBar } from '../../components/NavBar'
 import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
+import { ImageCarousel } from '../../components/ImageCarousel'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/laser-lavieen/BANNER-LAVIEEN.jpg'
 import procedimentoImage from '../../assets/procedimentos/laser-lavieen/lavieen.jpg'
+import galeria1 from '../../assets/procedimentos/laser-lavieen/grdr 2025-11-26 171707.656.JPG'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function LaserLavieen() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+
+  const galeriaImages = [procedimentoImage, galeria1]
 
   return (
     <>
@@ -67,7 +71,7 @@ function LaserLavieen() {
               </a>
             </div>
             <div className='procedimento-image'>
-              <img src={procedimentoImage} alt='Laser Lavieen' />
+              <ImageCarousel images={galeriaImages} alt='Laser Lavieen' />
             </div>
           </div>
         </motion.section>

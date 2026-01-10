@@ -62,13 +62,16 @@
 
 .procedimento-image {
   width: 100%;
+  max-width: 500px;
+  height: 700px;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
+  margin: 0 auto;
 }
 
 .procedimento-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -114,6 +117,11 @@
     grid-template-columns: 1fr;
     gap: 60px;
   }
+
+  .procedimento-image {
+    height: 600px;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -136,5 +144,10 @@
   .agende-btn {
     font-size: 16px;
     padding: 14px 28px;
+  }
+
+  .procedimento-image {
+    height: 500px;
+    max-width: 100%;
   }
 }
