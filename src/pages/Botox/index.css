@@ -1,5 +1,6 @@
 .procedimento-page {
   background: #F9E4CA;
+  overflow-x: hidden;
 }
 
 .procedimento-hero {
@@ -35,14 +36,15 @@
 }
 
 .procedimento-content-section {
-  padding: 100px 120px;
+  padding: 100px 80px;
+  overflow-x: hidden;
 }
 
 .procedimento-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
+  gap: 80px;
+  align-items: start;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -67,6 +69,7 @@
   border-radius: 12px;
   overflow: visible;
   margin: 0 auto;
+  justify-self: center;
 }
 
 .procedimento-image img {
@@ -107,47 +110,108 @@
   
   .procedimento-hero-overlay h1 {
     font-size: 48px;
+    padding: 0 20px;
   }
   
   .procedimento-content-section {
-    padding: 80px 60px;
+    padding: 80px 40px;
   }
   
   .procedimento-layout {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
   }
 
   .procedimento-image {
-    height: 600px;
-    max-width: 100%;
+    height: 550px;
+    max-width: 450px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .procedimento-hero {
-    height: 250px;
+    height: 220px;
   }
   
   .procedimento-hero-overlay h1 {
-    font-size: 36px;
+    font-size: 28px;
+    padding: 0 20px;
   }
   
   .procedimento-content-section {
-    padding: 60px 30px;
+    padding: 40px 20px;
+  }
+
+  .procedimento-layout {
+    gap: 30px;
   }
   
   .procedimento-description {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.6;
   }
   
   .agende-btn {
-    font-size: 16px;
-    padding: 14px 28px;
+    font-size: 15px;
+    padding: 12px 24px;
+    width: 100%;
+    justify-content: center;
   }
 
   .procedimento-image {
-    height: 500px;
+    height: 420px;
     max-width: 100%;
+    border-radius: 8px;
+    width: calc(100vw - 40px);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .procedimento-hero {
+    height: 180px;
+  }
+  
+  .procedimento-hero-overlay h1 {
+    font-size: 24px;
+  }
+
+  .procedimento-content-section {
+    padding: 30px 16px;
+  }
+
+  .procedimento-layout {
+    gap: 25px;
+  }
+
+  .procedimento-description {
+    font-size: 14px;
+  }
+
+  .procedimento-image {
+    height: 380px;
+    width: calc(100vw - 32px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .procedimento-hero {
+    height: 160px;
+  }
+  
+  .procedimento-hero-overlay h1 {
+    font-size: 22px;
+  }
+
+  .procedimento-content-section {
+    padding: 30px 12px;
+  }
+
+  .procedimento-description {
+    font-size: 14px;
+  }
+
+  .procedimento-image {
+    height: 350px;
+    width: calc(100vw - 24px);
   }
 }

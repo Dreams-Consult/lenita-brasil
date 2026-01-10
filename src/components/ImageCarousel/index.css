@@ -95,37 +95,75 @@
 
 @media screen and (max-width: 768px) {
   .carousel-wrapper {
-    min-height: 600px;
+    min-height: 420px;
   }
 
   .carousel-button {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
   }
 
   .carousel-button-prev {
-    left: 10px;
+    left: 12px;
   }
 
   .carousel-button-next {
-    right: 10px;
+    right: 12px;
   }
 
   .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .carousel-wrapper {
+    min-height: 380px;
+  }
+
+  .carousel-button {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .carousel-button-prev {
+    left: 8px;
+  }
+
+  .carousel-button-next {
+    right: 8px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .carousel-wrapper {
-    min-height: 500px;
+    min-height: 350px;
   }
 
   .carousel-button {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     font-size: 20px;
+  }
+
+  .carousel-button-prev {
+    left: 6px;
+  }
+
+  .carousel-button-next {
+    right: 6px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
   }
 }
