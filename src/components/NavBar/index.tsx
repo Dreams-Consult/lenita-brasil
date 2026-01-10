@@ -24,7 +24,7 @@ function NavBar({ isMobile }: NavBarProps) {
 
   useEffect(() => {
     // No mobile, sempre visível
-    if (!isMobile) {
+    if (isMobile) {
       setIsVisible(true)
       return
     }
@@ -69,16 +69,19 @@ function NavBar({ isMobile }: NavBarProps) {
   }
 
   const handleNavClick = (section: string) => {
-    setIsMenuOpen(false) // Fecha o menu ao clicar em um link
     if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
         const element = document.getElementById(section)
         element?.scrollIntoView({ behavior: 'smooth' })
+        setIsMenuOpen(false) // Fecha o menu após navegar
       }, 500)
     } else {
       const element = document.getElementById(section)
       element?.scrollIntoView({ behavior: 'smooth' })
+      setTimeout(() => {
+        setIsMenuOpen(false) // Fecha o menu após scroll
+      }, 300)
     }
   }
 
@@ -94,7 +97,7 @@ function NavBar({ isMobile }: NavBarProps) {
           '--mouse-x': `${mousePosition}%`
         } as React.CSSProperties}
       >
-        {!isMobile ? (
+        {isMobile ? (
           <div className='navbar-main-content'>
             <motion.div 
               className='logo-section'
@@ -178,7 +181,7 @@ function NavBar({ isMobile }: NavBarProps) {
         )}
 
         {
-          isMobile && (
+          !isMobile && (
             <nav className='nav-links'>
               <motion.a 
                 href='#sobre'
@@ -225,7 +228,7 @@ function NavBar({ isMobile }: NavBarProps) {
         }
 
         {
-          !isMobile && (
+          isMobile && (
             <AnimatePresence>
               {isMenuOpen && (
                 <motion.nav 
@@ -304,7 +307,7 @@ function NavBar({ isMobile }: NavBarProps) {
         }
 
         {
-          isMobile && (
+          !isMobile && (
             <div className='social-section'>
               <motion.a 
                 href='https://www.instagram.com/dra.lenitabrasil' 

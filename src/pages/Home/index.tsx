@@ -10,7 +10,7 @@ import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 
 function Home() {
-  const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
 
   return (
     <>
