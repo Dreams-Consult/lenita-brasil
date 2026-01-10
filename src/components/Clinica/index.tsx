@@ -1,6 +1,6 @@
 import './index.css'
 import { Button } from '../Button'
-import clinicImage from '../../assets/clinicas/banner-clinicas.jpg'
+import clinicImage from '../../assets/CLINICA.jpg'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
