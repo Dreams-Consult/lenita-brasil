@@ -1,156 +1,318 @@
 {
-  "exames": {
-    "hematologicos": {
-      "titulo": "Exames Hematológicos",
-      "descricao": "Análises completas do sangue para diagnóstico e acompanhamento da sua saúde",
-      "banner": "banner-hematologicos.jpg",
-      "lista": [
-        "Hemograma",
-        "Tipagem sanguínea",
-        "Hemoglobina glicada"
-      ],
-      "video": "https://www.youtube.com/embed/LpNVf8sczqU",
-      "videoOrientation": "horizontal",
-      "examesDetalhados": [
-        {
-          "nome": "Hemograma Completo",
-          "descricao": "Avalia todos os componentes do sangue, identificando anemias, infecções e alterações na coagulação."
-        },
-        {
-          "nome": "Contagem de Plaquetas",
-          "descricao": "Mede a quantidade de plaquetas no sangue, essencial para avaliar a capacidade de coagulação."
-        },
-        {
-          "nome": "VHS (Velocidade de Hemossedimentação)",
-          "descricao": "Detecta processos inflamatórios e infecciosos no organismo."
-        },
-        {
-          "nome": "Coagulograma",
-          "descricao": "Avalia a capacidade de coagulação do sangue, importante antes de cirurgias."
-        },
-        {
-          "nome": "Tipagem Sanguínea",
-          "descricao": "Identifica o grupo sanguíneo (A, B, AB, O) e o fator Rh (positivo ou negativo)."
-        }
-      ]
-    },
-    "bioquimicos": {
-      "titulo": "Exames Bioquímicos",
-      "descricao": "Análises detalhadas das substâncias químicas presentes no organismo",
-      "banner": "",
-      "lista": [
-        "Glicemia",
-        "Colesterol",
-        "Ureia e Creatinina"
-      ],
-      "video": "https://www.youtube.com/embed/LpNVf8sczqU",
-      "videoOrientation": "horizontal",
-      "examesDetalhados": [
-        {
-          "nome": "Glicemia",
-          "descricao": "Mede os níveis de glicose no sangue, fundamental para diagnóstico e controle de diabetes."
-        },
-        {
-          "nome": "Colesterol e Triglicerídeos",
-          "descricao": "Avalia os níveis de gorduras no sangue, importantes para saúde cardiovascular."
-        },
-        {
-          "nome": "Ureia e Creatinina",
-          "descricao": "Avaliam a função renal, detectando problemas nos rins."
-        },
-        {
-          "nome": "TGO e TGP",
-          "descricao": "Enzimas hepáticas que avaliam a função do fígado e detectam lesões hepáticas."
-        },
-        {
-          "nome": "Ácido Úrico",
-          "descricao": "Identifica níveis elevados que podem causar gota e problemas renais."
-        },
-        {
-          "nome": "Eletrólitos",
-          "descricao": "Avaliam sódio, potássio e outros minerais essenciais para o equilíbrio do organismo."
-        }
-      ]
-    },
-    "hormonais": {
-      "titulo": "Exames Hormonais",
-      "descricao": "Avaliação completa do sistema endócrino e equilíbrio hormonal",
-      "banner": "",
-      "lista": [
-        "TSH e T4 Livre",
-        "Testosterona",
-        "Estradiol"
-      ],
-      "video": "https://www.youtube.com/embed/LpNVf8sczqU",
-      "videoOrientation": "horizontal",
-      "examesDetalhados": [
-        {
-          "nome": "TSH e T4 Livre",
-          "descricao": "Avaliam a função da tireoide, detectando hipo ou hipertireoidismo."
-        },
-        {
-          "nome": "Testosterona",
-          "descricao": "Importante para avaliação da função reprodutiva masculina e feminina."
-        },
-        {
-          "nome": "Estradiol e Progesterona",
-          "descricao": "Hormônios femininos essenciais para fertilidade e ciclo menstrual."
-        },
-        {
-          "nome": "Cortisol",
-          "descricao": "Hormônio do estresse, avalia função adrenal e distúrbios metabólicos."
-        },
-        {
-          "nome": "Prolactina",
-          "descricao": "Importante para investigação de infertilidade e distúrbios menstruais."
-        },
-        {
-          "nome": "Insulina",
-          "descricao": "Avalia resistência insulínica e risco de diabetes tipo 2."
-        }
-      ]
-    },
-    "imunologicos": {
-      "titulo": "Exames Imunológicos",
-      "descricao": "Avaliação do sistema imunológico e detecção de doenças infecciosas",
-      "banner": "",
-      "lista": [
-        "Sorologias Virais",
-        "Fator Reumatoide",
-        "FAN"
-      ],
-      "video": "https://www.youtube.com/embed/LpNVf8sczqU",
-      "videoOrientation": "horizontal",
-      "examesDetalhados": [
-        {
-          "nome": "Sorologias Virais",
-          "descricao": "Detectam anticorpos contra vírus como HIV, Hepatites B e C, rubéola, toxoplasmose."
-        },
-        {
-          "nome": "Fator Reumatoide",
-          "descricao": "Auxilia no diagnóstico de artrite reumatoide e outras doenças autoimunes."
-        },
-        {
-          "nome": "Proteína C Reativa (PCR)",
-          "descricao": "Marcador de inflamação e infecção, importante para diagnóstico e monitoramento."
-        },
-        {
-          "nome": "FAN (Fator Antinuclear)",
-          "descricao": "Rastreamento de doenças autoimunes como lúpus e esclerodermia."
-        },
-        {
-          "nome": "IgE Total e Específica",
-          "descricao": "Avalia alergias respiratórias, alimentares e dermatológicas."
-        },
-        {
-          "nome": "ASLO",
-          "descricao": "Detecta infecção estreptocócica recente, importante para diagnóstico de febre reumática."
-        }
-      ]
+  "site": {
+    "nome": "Clínica Lenita Brasil",
+    "logo": "logo-horizontal.png",
+    "redesSociais": {
+      "instagram": {
+        "url": "https://instagram.com/lenitabrasil",
+        "icon": "instagram-icon.svg"
+      },
+      "facebook": {
+        "url": "https://facebook.com/lenitabrasil",
+        "icon": "facebook-icon.svg"
+      },
+      "whatsapp": {
+        "numero": "5591996040003",
+        "icon": "whatsapp-icon.svg"
+      },
+      "youtube": {
+        "url": "https://youtube.com/@lenitabrasil",
+        "icon": "youtube-icon.svg"
+      }
     }
   },
+  "banner": {
+    "imagemDesktop": "bannersite.jpg",
+    "imagemMobile": "bannersite-mobile.png",
+    "titulo": "CLÍNICA MÉDICA DERMATOLÓGICA E EXAMES LABRATORIAIS DE ALTO PADRÃO",
+    "botaoTexto": "Agende seu horário"
+  },
+  "sobre": {
+    "titulo": "Dra. Lenita Brasil",
+    "imagem": "Imagem-Lenita.png",
+    "descricao": "Médica e referência na integração entre saúde e bem-estar, a Dra. Lenita Brasil está à frente da clínica e da rede de laboratórios especializados em tratamentos estéticos individualizados e exames laboratoriais. Seu compromisso é promover equilíbrio, autoestima e qualidade de vida, sempre com acolhimento e resultados naturais.",
+    "botaoTexto": "Agende sua consulta"
+  },
+  "clinica": {
+    "titulo": "Clínica Lenita Brasil",
+    "imagem": "CLINICA.jpg",
+    "banner": "banner-clinicas.jpg",
+    "descricao": "Em nossa clínica, sua experiência começa antes do procedimento. O tratamento exclusivo tem o olhar atento e a compreensão cuidadosa da Dra. Lenita Brasil para que você conheça profundamente os procedimentos que mais fazem sentido para a sua história e para a imagem que você deseja expressar.",
+    "botaoTexto": "Saiba mais",
+    "link": "/clinicas"
+  },
+  "laboratorios": {
+    "titulo": "Laboratórios Lenita Brasil",
+    "intro": "Os Laboratórios Lenita Brasil contam com duas unidades prontas para receber você. Realizamos seus exames com rigor técnico, responsabilidade e agilidade, garantindo uma experiência tranquila e segura em todas as etapas do atendimento.",
+    "unidades": [
+      {
+        "nome": "Belém",
+        "imagem": "BELEM-EDIT-1.png",
+        "endereco": "Av. Governador José Malcher, 1234 - Nazaré, Belém - PA",
+        "telefone": "(91) 3241-1234",
+        "horario": "Seg a Sex: 7h às 18h | Sáb: 7h às 12h"
+      },
+      {
+        "nome": "Castanhal",
+        "imagem": "CASTANHAL-EDIT-1.png",
+        "endereco": "Rua Principal, 567 - Centro, Castanhal - PA",
+        "telefone": "(91) 3721-5678",
+        "horario": "Seg a Sex: 7h às 18h | Sáb: 7h às 12h"
+      }
+    ]
+  },
+  "exames": {
+    "titulo": "Exames Laboratoriais",
+    "banner": "banner-exames.jpg",
+    "categorias": {
+      "hematologicos": {
+        "titulo": "Exames Hematológicos",
+        "descricao": "Análises completas do sangue para diagnóstico e acompanhamento da sua saúde",
+        "icon": "tube-icon.svg",
+        "lista": [
+          "Hemograma",
+          "Tipagem sanguínea",
+          "Hemoglobina glicada"
+        ],
+        "video": "https://www.youtube.com/embed/LpNVf8sczqU",
+        "videoOrientation": "horizontal",
+        "examesDetalhados": [
+          {
+            "nome": "Hemograma Completo",
+            "descricao": "Avalia todos os componentes do sangue, identificando anemias, infecções e alterações na coagulação."
+          },
+          {
+            "nome": "Contagem de Plaquetas",
+            "descricao": "Mede a quantidade de plaquetas no sangue, essencial para avaliar a capacidade de coagulação."
+          },
+          {
+            "nome": "VHS (Velocidade de Hemossedimentação)",
+            "descricao": "Detecta processos inflamatórios e infecciosos no organismo."
+          },
+          {
+            "nome": "Coagulograma",
+            "descricao": "Avalia a capacidade de coagulação do sangue, importante antes de cirurgias."
+          },
+          {
+            "nome": "Tipagem Sanguínea",
+            "descricao": "Identifica o grupo sanguíneo (A, B, AB, O) e o fator Rh (positivo ou negativo)."
+          }
+        ]
+      },
+      "bioquimicos": {
+        "titulo": "Exames Bioquímicos",
+        "descricao": "Análises detalhadas das substâncias químicas presentes no organismo",
+        "icon": "tube-icon.svg",
+        "lista": [
+          "Glicemia",
+          "Colesterol",
+          "Ureia e Creatinina"
+        ],
+        "video": "https://www.youtube.com/embed/LpNVf8sczqU",
+        "videoOrientation": "horizontal",
+        "examesDetalhados": [
+          {
+            "nome": "Glicemia",
+            "descricao": "Mede os níveis de glicose no sangue, fundamental para diagnóstico e controle de diabetes."
+          },
+          {
+            "nome": "Colesterol e Triglicerídeos",
+            "descricao": "Avalia os níveis de gorduras no sangue, importantes para saúde cardiovascular."
+          },
+          {
+            "nome": "Ureia e Creatinina",
+            "descricao": "Avaliam a função renal, detectando problemas nos rins."
+          },
+          {
+            "nome": "TGO e TGP",
+            "descricao": "Enzimas hepáticas que avaliam a função do fígado e detectam lesões hepáticas."
+          },
+          {
+            "nome": "Ácido Úrico",
+            "descricao": "Identifica níveis elevados que podem causar gota e problemas renais."
+          },
+          {
+            "nome": "Eletrólitos",
+            "descricao": "Avaliam sódio, potássio e outros minerais essenciais para o equilíbrio do organismo."
+          }
+        ]
+      },
+      "hormonais": {
+        "titulo": "Exames Hormonais",
+        "descricao": "Avaliação completa do sistema endócrino e equilíbrio hormonal",
+        "icon": "tube-icon.svg",
+        "lista": [
+          "TSH e T4 Livre",
+          "Testosterona",
+          "Estradiol"
+        ],
+        "video": "https://www.youtube.com/embed/LpNVf8sczqU",
+        "videoOrientation": "horizontal",
+        "examesDetalhados": [
+          {
+            "nome": "TSH e T4 Livre",
+            "descricao": "Avaliam a função da tireoide, detectando hipo ou hipertireoidismo."
+          },
+          {
+            "nome": "Testosterona",
+            "descricao": "Importante para avaliação da função reprodutiva masculina e feminina."
+          },
+          {
+            "nome": "Estradiol e Progesterona",
+            "descricao": "Hormônios femininos essenciais para fertilidade e ciclo menstrual."
+          },
+          {
+            "nome": "Cortisol",
+            "descricao": "Hormônio do estresse, avalia função adrenal e distúrbios metabólicos."
+          },
+          {
+            "nome": "Prolactina",
+            "descricao": "Importante para investigação de infertilidade e distúrbios menstruais."
+          },
+          {
+            "nome": "Insulina",
+            "descricao": "Avalia resistência insulínica e risco de diabetes tipo 2."
+          }
+        ]
+      },
+      "imunologicos": {
+        "titulo": "Exames Imunológicos",
+        "descricao": "Avaliação do sistema imunológico e detecção de doenças infecciosas",
+        "icon": "tube-icon.svg",
+        "lista": [
+          "Sorologias Virais",
+          "Fator Reumatoide",
+          "FAN"
+        ],
+        "video": "https://www.youtube.com/embed/LpNVf8sczqU",
+        "videoOrientation": "horizontal",
+        "examesDetalhados": [
+          {
+            "nome": "Sorologias Virais",
+            "descricao": "Detectam anticorpos contra vírus como HIV, Hepatites B e C, rubéola, toxoplasmose."
+          },
+          {
+            "nome": "Fator Reumatoide",
+            "descricao": "Auxilia no diagnóstico de artrite reumatoide e outras doenças autoimunes."
+          },
+          {
+            "nome": "Proteína C Reativa (PCR)",
+            "descricao": "Marcador de inflamação e infecção, importante para diagnóstico e monitoramento."
+          },
+          {
+            "nome": "FAN (Fator Antinuclear)",
+            "descricao": "Rastreamento de doenças autoimunes como lúpus e esclerodermia."
+          },
+          {
+            "nome": "IgE Total e Específica",
+            "descricao": "Avalia alergias respiratórias, alimentares e dermatológicas."
+          },
+          {
+            "nome": "ASLO",
+            "descricao": "Detecta infecção estreptocócica recente, importante para diagnóstico de febre reumática."
+          }
+        ]
+      }
+    }
+  },
+  "procedimentos": {
+    "titulo": "Procedimentos",
+    "intro": "Na Clínica Lenita Brasil, seu tratamento estético é conduzido com técnica avançada, equipamentos modernos e atenção cuidadosa às suas principais necessidades e desejos. O nosso objetivo é realçar sua beleza natural com segurança e harmonia para alcançar resultados duradouros.",
+    "subtitulo": "O que deseja transformar hoje?",
+    "lista": [
+      {
+        "id": "botox",
+        "title": "Botox",
+        "img": "Botox.jpg",
+        "banner": "BANNER-BOTOX.jpg",
+        "link": "/procedimentos/botox"
+      },
+      {
+        "id": "preenchimento-labial",
+        "title": "Preenchimento labial",
+        "img": "PreenchimentoLabial.jpg",
+        "banner": "BANNER-PREENCHIMENTO.jpg",
+        "link": "/procedimentos/preenchimento-labial"
+      },
+      {
+        "id": "mesojectgun",
+        "title": "MesojectGun",
+        "img": "MesojectGun.jpg",
+        "banner": "BANNER-MASOJECTGUN.jpg",
+        "link": "/procedimentos/mesojectgun"
+      },
+      {
+        "id": "terapia-capilar",
+        "title": "Terapia capilar",
+        "img": "TerapiaCapilar.jpg",
+        "banner": "BANNER-TERAPIACAPILAR.jpg",
+        "link": "/procedimentos/terapia-capilar"
+      },
+      {
+        "id": "tratamento-manchas",
+        "title": "Tratamento de manchas",
+        "img": "ManchasRosto.jpg",
+        "banner": "BANNER-MANCHAS.jpg",
+        "link": "/procedimentos/tratamento-manchas"
+      },
+      {
+        "id": "fios-pdo",
+        "title": "Fios de PDO",
+        "img": "FIOS PDO.jpg",
+        "banner": "BANNER-FIOSPDO.jpg",
+        "link": "/procedimentos/fios-pdo"
+      },
+      {
+        "id": "ultraformer-mpt",
+        "title": "Ultraformer MPT",
+        "img": "Ultraformer.jpg",
+        "banner": "BANNER-ULTRAFORMER.jpg",
+        "link": "/procedimentos/ultraformer-mpt"
+      },
+      {
+        "id": "laser-lavieen",
+        "title": "Laser Lavieen",
+        "img": "lavieen.jpg",
+        "banner": "BANNER-LAVIEEN.jpg",
+        "link": "/procedimentos/laser-lavieen"
+      }
+    ]
+  },
   "contato": {
+    "titulo": "Entre em Contato",
     "whatsapp": "5591996040003",
-    "telefone": "(91) 99604-0003"
+    "telefone": "(91) 99604-0003",
+    "email": "contato@lenitabrasil.com.br",
+    "enderecos": [
+      {
+        "tipo": "Clínica",
+        "icon": "clinic-icon.svg",
+        "endereco": "Av. Governador José Malcher, 1234 - Nazaré, Belém - PA"
+      },
+      {
+        "tipo": "Laboratório Belém",
+        "icon": "tube-icon.svg",
+        "endereco": "Av. Governador José Malcher, 1234 - Nazaré, Belém - PA"
+      },
+      {
+        "tipo": "Laboratório Castanhal",
+        "icon": "tube-icon.svg",
+        "endereco": "Rua Principal, 567 - Centro, Castanhal - PA"
+      }
+    ]
+  },
+  "footer": {
+    "logo": "logo-1.png",
+    "direitos": "© 2024 Clínica Lenita Brasil. Todos os direitos reservados.",
+    "links": [
+      {
+        "texto": "Política de Privacidade",
+        "url": "/privacidade"
+      },
+      {
+        "texto": "Termos de Uso",
+        "url": "/termos"
+      }
+    ]
   }
 }

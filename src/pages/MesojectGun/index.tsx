@@ -3,9 +3,9 @@ import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import bannerImage from '../../assets/BANNER-MASOJECTGUN.jpg'
-import procedimentoImage from '../../assets/MesojectGun.jpg'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import bannerImage from '../../assets/procedimentos/mesoject-gun/BANNER-MASOJECTGUN.jpg'
+import procedimentoImage from '../../assets/procedimentos/mesoject-gun/MesojectGun.jpg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function MesojectGun() {

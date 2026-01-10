@@ -3,9 +3,9 @@ import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import bannerImage from '../../assets/BANNER-FIOSPDO.jpg'
-import procedimentoImage from '../../assets/FIOS PDO.jpg'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import bannerImage from '../../assets/procedimentos/fios-de-pdo/BANNER-FIOSPDO.jpg'
+import procedimentoImage from '../../assets/procedimentos/fios-de-pdo/FIOS PDO.jpg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function FiosPDO() {

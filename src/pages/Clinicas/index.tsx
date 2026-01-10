@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import bannerImage from '../../assets/banner-clinicas.jpg'
+import bannerImage from '../../assets/clinicas/banner-clinicas.jpg'
 import '../Hematologicos/index.css'
 import './index.css'
 

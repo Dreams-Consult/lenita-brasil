@@ -1,28 +1,35 @@
 import './index.css'
-import BotoxImg from '../../assets/Botox.jpg'
-import PreenchimentoImg from '../../assets/PreenchimentoLabial.jpg'
-import MesojectGunImg from '../../assets/MesojectGun.jpg'
-import TerapiaCapilarImg from '../../assets/TerapiaCapilar.jpg'
-import ManchasImg from '../../assets/ManchasRosto.jpg'
-import FiosPDOImg from '../../assets/FIOS PDO.jpg'
-import UltraformerImg from '../../assets/Ultraformer.jpg'
-import LavieeenImg from '../../assets/lavieen.jpg'
+import BotoxImg from '../../assets/procedimentos/botox/Botox.jpg'
+import PreenchimentoImg from '../../assets/procedimentos/preenchimento-labial/PreenchimentoLabial.jpg'
+import MesojectGunImg from '../../assets/procedimentos/mesoject-gun/MesojectGun.jpg'
+import TerapiaCapilarImg from '../../assets/procedimentos/terapia-capilar/TerapiaCapilar.jpg'
+import ManchasImg from '../../assets/procedimentos/tratament-de-manchas/ManchasRosto.jpg'
+import FiosPDOImg from '../../assets/procedimentos/fios-de-pdo/FIOS PDO.jpg'
+import UltraformerImg from '../../assets/procedimentos/ultraformer-mpt/Ultraformer.jpg'
+import LavieeenImg from '../../assets/procedimentos/laser-lavieen/lavieen.jpg'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import siteConfig from '../../config/siteConfig.json'
 
 function Procedimentos() {
   const navigate = useNavigate()
 
-  const procedimentos = [
-    { img: BotoxImg, title: 'Botox', link: '/procedimentos/botox' },
-    { img: PreenchimentoImg, title: 'Preenchimento labial', link: '/procedimentos/preenchimento-labial' },
-    { img: MesojectGunImg, title: 'MesojectGun', link: '/procedimentos/mesojectgun' },
-    { img: TerapiaCapilarImg, title: 'Terapia capilar', link: '/procedimentos/terapia-capilar' },
-    { img: ManchasImg, title: 'Tratamento de manchas', link: '/procedimentos/tratamento-manchas' },
-    { img: FiosPDOImg, title: 'Fios de PDO', link: '/procedimentos/fios-pdo' },
-    { img: UltraformerImg, title: 'Ultraformer MPT', link: '/procedimentos/ultraformer-mpt' },
-    { img: LavieeenImg, title: 'Laser Lavieen', link: '/procedimentos/laser-lavieen' },
-  ]
+  // Mapeamento de imagens importadas
+  const imageMap: { [key: string]: string } = {
+    'Botox.jpg': BotoxImg,
+    'PreenchimentoLabial.jpg': PreenchimentoImg,
+    'MesojectGun.jpg': MesojectGunImg,
+    'TerapiaCapilar.jpg': TerapiaCapilarImg,
+    'ManchasRosto.jpg': ManchasImg,
+    'FIOS PDO.jpg': FiosPDOImg,
+    'Ultraformer.jpg': UltraformerImg,
+    'lavieen.jpg': LavieeenImg,
+  }
+
+  const procedimentos = siteConfig.procedimentos.lista.map(proc => ({
+    ...proc,
+    img: imageMap[proc.img] || proc.img
+  }))
 
   const handleCardClick = (link: string) => {
     navigate(link)
@@ -46,7 +53,7 @@ function Procedimentos() {
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.05, color: '#8C5838' }}
         >
-          Procedimentos
+          {siteConfig.procedimentos.titulo}
         </motion.h1>
         <motion.p 
           className='procedimentos-intro'
@@ -55,10 +62,7 @@ function Procedimentos() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Na Clínica Lenita Brasil, seu tratamento estético é conduzido com técnica avançada, 
-          equipamentos modernos e atenção cuidadosa às suas principais necessidades e desejos. 
-          O nosso objetivo é realçar sua beleza natural com segurança e harmonia para alcançar 
-          resultados duradouros.
+          {siteConfig.procedimentos.intro}
         </motion.p>
         
         <motion.h2 
@@ -68,7 +72,7 @@ function Procedimentos() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          O que deseja transformar hoje?
+          {siteConfig.procedimentos.subtitulo}
         </motion.h2>
         
         <div className='procedimentos-grid'>

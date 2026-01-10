@@ -1,5 +1,5 @@
 import './index.css'
-import searchLogo from '../../assets/search-icon.svg'
+import searchLogo from '../../assets/svg/search-icon.svg'
 
 type InputProps = {
   value: string,

@@ -4,14 +4,14 @@ import { Footer } from '../../components/Footer'
 import { YouTubePlayer } from '../../components/YouTubePlayer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import bannerImage from '../../assets/banner-exames.jpg'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import bannerImage from '../../assets/exames/banner-exames.jpg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import siteConfig from '../../config/siteConfig.json'
 import './index.css'
 
 function Hematologicos() {
   const isMobile = useMediaQuery({ query: `(min-width: 1100px)` })
-  const examData = siteConfig.exames.hematologicos
+  const examData = siteConfig.exames.categorias.hematologicos
 
   return (
     <>

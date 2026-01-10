@@ -3,9 +3,9 @@ import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import bannerImage from '../../assets/BANNER-PREENCHIMENTO.jpg'
-import procedimentoImage from '../../assets/PreenchimentoLabial.jpg'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import bannerImage from '../../assets/procedimentos/preenchimento-labial/BANNER-PREENCHIMENTO.jpg'
+import procedimentoImage from '../../assets/procedimentos/preenchimento-labial/PreenchimentoLabial.jpg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function PreenchimentoLabial() {

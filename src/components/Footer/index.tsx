@@ -1,6 +1,6 @@
 import logo from '../../assets/logo-1.png'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
-import instagramIcon from '../../assets/instagram-icon.svg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
+import instagramIcon from '../../assets/svg/instagram-icon.svg'
 import './index.css'
 import { motion } from 'framer-motion'
 

@@ -3,9 +3,9 @@ import { Contato } from '../../components/Contato'
 import { Footer } from '../../components/Footer'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
-import bannerImage from '../../assets/BANNER-ULTRAFORMER.jpg'
-import procedimentoImage from '../../assets/Ultraformer.jpg'
-import whatsappIcon from '../../assets/whatsapp-icon.svg'
+import bannerImage from '../../assets/procedimentos/ultraformer-mpt/BANNER-ULTRAFORMER.jpg'
+import procedimentoImage from '../../assets/procedimentos/ultraformer-mpt/Ultraformer.jpg'
+import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
 function UltraformerMPT() {

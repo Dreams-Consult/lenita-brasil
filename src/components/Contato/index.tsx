@@ -1,6 +1,6 @@
 import './index.css'
 import { Button } from '../Button'
-import whatsapp from '../../assets/whatsapp-icon.svg'
+import whatsapp from '../../assets/svg/whatsapp-icon.svg'
 import { useState } from 'react'
 
 function Contato() {

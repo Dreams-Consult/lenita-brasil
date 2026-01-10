@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo-horizontal.png'
-import instagram from '../../assets/instagram-icon.svg'
-import whatsapp from '../../assets/whatsapp-icon.svg'
-import facebook from '../../assets/facebook-icon.svg'
+import instagram from '../../assets/svg/instagram-icon.svg'
+import whatsapp from '../../assets/svg/whatsapp-icon.svg'
+import facebook from '../../assets/svg/facebook-icon.svg'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import './index.css'
