@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/fios-de-pdo/BANNER-FIOSPDO.jpg'
 import procedimentoImage from '../../assets/procedimentos/fios-de-pdo/FIOS PDO.jpg'
-import galeria1 from '../../assets/procedimentos/fios-de-pdo/grdr 2025-11-24 113137.883.JPG'
+import galeria1 from '../../assets/procedimentos/fios-de-pdo/fios-galeria-1.jpg'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 

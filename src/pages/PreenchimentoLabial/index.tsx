@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive'
 import { motion } from 'framer-motion'
 import bannerImage from '../../assets/procedimentos/preenchimento-labial/BANNER-PREENCHIMENTO.jpg'
 import procedimentoImage from '../../assets/procedimentos/preenchimento-labial/PreenchimentoLabial.jpg'
-import galeria1 from '../../assets/procedimentos/preenchimento-labial/grdr 2025-12-10 145226.193.JPG'
+import galeria1 from '../../assets/procedimentos/preenchimento-labial/preenchimento-galeria-1.jpg'
 import whatsappIcon from '../../assets/svg/whatsapp-icon.svg'
 import '../Botox/index.css'
 
