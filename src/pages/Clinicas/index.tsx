@@ -13,6 +13,7 @@ import castanhalFoto1 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-1.png'
 import castanhalFoto2 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-2.png'
 import castanhalFoto3 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-3.png'
 import castanhalFoto4 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-4.png'
+import siteConfig from '../../config/siteConfig.json'
 import '../Hematologicos/index.css'
 import './index.css'
 
@@ -26,19 +27,23 @@ function Clinicas() {
   const [galleryImages, setGalleryImages] = useState<string[]>([])
   const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
   
-  const belemImages = [
-    belemFoto1,
-    belemFoto2,
-    belemFoto3,
-    belemFoto4
-  ]
+  // Mapeamento de imagens importadas
+  const belemImageMap: { [key: string]: string } = {
+    'FOTOS-CLINICA-1.png': belemFoto1,
+    'FOTOS-CLINICA-2.png': belemFoto2,
+    'FOTOS-CLINICA-3.png': belemFoto3,
+    'FOTOS-CLINICA-4.png': belemFoto4,
+  }
   
-  const castanhalImages = [
-    castanhalFoto1,
-    castanhalFoto2,
-    castanhalFoto3,
-    castanhalFoto4
-  ]
+  const castanhalImageMap: { [key: string]: string } = {
+    'FOTOS-CLINICA-1.png': castanhalFoto1,
+    'FOTOS-CLINICA-2.png': castanhalFoto2,
+    'FOTOS-CLINICA-3.png': castanhalFoto3,
+    'FOTOS-CLINICA-4.png': castanhalFoto4,
+  }
+  
+  const belemImages = siteConfig.clinica.unidades[0].galeria.map(img => belemImageMap[img])
+  const castanhalImages = siteConfig.clinica.unidades[1].galeria.map(img => castanhalImageMap[img])
   
   const slideVariants = {
     enter: (direction: number) => ({

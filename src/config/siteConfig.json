@@ -39,7 +39,29 @@
     "banner": "banner-clinicas.jpg",
     "descricao": "Em nossa clínica, sua experiência começa antes do procedimento. O tratamento exclusivo tem o olhar atento e a compreensão cuidadosa da Dra. Lenita Brasil para que você conheça profundamente os procedimentos que mais fazem sentido para a sua história e para a imagem que você deseja expressar.",
     "botaoTexto": "Saiba mais",
-    "link": "/clinicas"
+    "link": "/clinicas",
+    "unidades": [
+      {
+        "nome": "Belém",
+        "endereco": "R. Bernal do Couto, nº 75 - Umarizal",
+        "galeria": [
+          "FOTOS-CLINICA-1.png",
+          "FOTOS-CLINICA-2.png",
+          "FOTOS-CLINICA-3.png",
+          "FOTOS-CLINICA-4.png"
+        ]
+      },
+      {
+        "nome": "Castanhal",
+        "endereco": "Av. Marechal Deodoro, nº 368 - Ianetama",
+        "galeria": [
+          "FOTOS-CLINICA-1.png",
+          "FOTOS-CLINICA-2.png",
+          "FOTOS-CLINICA-3.png",
+          "FOTOS-CLINICA-4.png"
+        ]
+      }
+    ]
   },
   "laboratorios": {
     "titulo": "Laboratórios Lenita Brasil",
