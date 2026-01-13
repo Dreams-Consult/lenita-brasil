@@ -106,7 +106,7 @@
 
 .form-textarea {
   resize: none;
-  min-height: 100px;
+  min-height: 48px;
 }
 
 .form-button-wrapper {

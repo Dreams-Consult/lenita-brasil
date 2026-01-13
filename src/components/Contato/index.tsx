@@ -77,7 +77,6 @@ function Contato() {
               value={mensagem} 
               placeholder='Mensagem' 
               onChange={(e) => setMensagem(e.target.value)}
-              rows={4}
             />
           </div>
 
