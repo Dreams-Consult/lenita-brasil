@@ -5,6 +5,14 @@ import { useMediaQuery } from 'react-responsive'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import bannerImage from '../../assets/clinicas/banner-clinicas.jpg'
+import belemFoto1 from '../../assets/clinicas/belem/FOTOS-CLINICA-1.png'
+import belemFoto2 from '../../assets/clinicas/belem/FOTOS-CLINICA-2.png'
+import belemFoto3 from '../../assets/clinicas/belem/FOTOS-CLINICA-3.png'
+import belemFoto4 from '../../assets/clinicas/belem/FOTOS-CLINICA-4.png'
+import castanhalFoto1 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-1.png'
+import castanhalFoto2 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-2.png'
+import castanhalFoto3 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-3.png'
+import castanhalFoto4 from '../../assets/clinicas/castanhal/FOTOS-CLINICA-4.png'
 import '../Hematologicos/index.css'
 import './index.css'
 
@@ -12,36 +20,58 @@ function Clinicas() {
   const isMobile = useMediaQuery({ query: `(max-width: 1100px)` })
   const [currentBelemImage, setCurrentBelemImage] = useState(0)
   const [currentCastanhalImage, setCurrentCastanhalImage] = useState(0)
+  const [belemDirection, setBelemDirection] = useState(1)
+  const [castanhalDirection, setCastanhalDirection] = useState(1)
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [galleryImages, setGalleryImages] = useState<string[]>([])
   const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
   
-  // Imagens temporárias - substituir com as imagens reais
   const belemImages = [
-    bannerImage,
-    bannerImage,
-    bannerImage
+    belemFoto1,
+    belemFoto2,
+    belemFoto3,
+    belemFoto4
   ]
   
   const castanhalImages = [
-    bannerImage,
-    bannerImage,
-    bannerImage
+    castanhalFoto1,
+    castanhalFoto2,
+    castanhalFoto3,
+    castanhalFoto4
   ]
   
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  }
+  
   const nextBelemImage = () => {
+    setBelemDirection(1)
     setCurrentBelemImage((prev) => (prev + 1) % belemImages.length)
   }
   
   const prevBelemImage = () => {
+    setBelemDirection(-1)
     setCurrentBelemImage((prev) => (prev - 1 + belemImages.length) % belemImages.length)
   }
   
   const nextCastanhalImage = () => {
+    setCastanhalDirection(1)
     setCurrentCastanhalImage((prev) => (prev + 1) % castanhalImages.length)
   }
   
   const prevCastanhalImage = () => {
+    setCastanhalDirection(-1)
     setCurrentCastanhalImage((prev) => (prev - 1 + castanhalImages.length) % castanhalImages.length)
   }
 
@@ -116,16 +146,29 @@ function Clinicas() {
               </div>
               <div className='clinic-carousel'>
                 <div className='carousel-container'>
-                  <AnimatePresence mode='wait'>
+                  <AnimatePresence initial={false} custom={belemDirection}>
                     <motion.img
                       key={currentBelemImage}
                       src={belemImages[currentBelemImage]}
                       alt={`Clínica Belém ${currentBelemImage + 1}`}
                       className='carousel-image'
-                      initial={{ opacity: 0, x: 100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -100 }}
+                      custom={belemDirection}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
                       transition={{ duration: 0.3 }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={1}
+                      onDragEnd={(_, { offset, velocity }) => {
+                        const swipe = Math.abs(offset.x) * velocity.x
+                        if (swipe < -10000) {
+                          nextBelemImage()
+                        } else if (swipe > 10000) {
+                          prevBelemImage()
+                        }
+                      }}
                     />
                   </AnimatePresence>
                   <button className='carousel-btn prev' onClick={prevBelemImage}>
@@ -191,16 +234,29 @@ function Clinicas() {
               </div>
               <div className='clinic-carousel'>
                 <div className='carousel-container'>
-                  <AnimatePresence mode='wait'>
+                  <AnimatePresence initial={false} custom={castanhalDirection}>
                     <motion.img
                       key={currentCastanhalImage}
                       src={castanhalImages[currentCastanhalImage]}
                       alt={`Clínica Castanhal ${currentCastanhalImage + 1}`}
                       className='carousel-image'
-                      initial={{ opacity: 0, x: 100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -100 }}
+                      custom={castanhalDirection}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
                       transition={{ duration: 0.3 }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={1}
+                      onDragEnd={(_, { offset, velocity }) => {
+                        const swipe = Math.abs(offset.x) * velocity.x
+                        if (swipe < -10000) {
+                          nextCastanhalImage()
+                        } else if (swipe > 10000) {
+                          prevCastanhalImage()
+                        }
+                      }}
                     />
                   </AnimatePresence>
                   <button className='carousel-btn prev' onClick={prevCastanhalImage}>
